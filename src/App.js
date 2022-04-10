@@ -6,7 +6,7 @@ import {
   Route
 } from 'react-router-dom';
 // import compinents
-import ProductsList from './components/ProductList';
+import ProductsList from './pages/ProductList';
 
 
 function App() {
