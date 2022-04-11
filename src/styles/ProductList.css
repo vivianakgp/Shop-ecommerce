@@ -1,0 +1,28 @@
+.ProductsList{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #000;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    
+}
+.productContainer{
+    text-align: center;
+    justify-content: center;
+    width: 30vh;
+    height: 40vh;
+    margin: 1rem auto;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px 1px #000;
+    
+}
+.images{
+    width: 20vh;
+    height: 20vh;
+    overflow: hidden;
+    position:initial;
+}
+.link{
+    text-decoration: none;
+}
