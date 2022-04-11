@@ -11,7 +11,7 @@ const ProductsList = () => {
             .then(res => setProducts(res.data.data.products))
     }, []);
     console.log(Products)
-    const {id} = useParams();
+    
     return (
         <div className='ProductsList' >
             {
