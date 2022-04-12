@@ -5,6 +5,7 @@ import {Link, useParams} from 'react-router-dom'
 import '../styles/ProductList.css';
 //import components
 import SelectCategory from '../components/SelectCategory';
+import SearchProduct from '../components/SearchProduct';
 
 
 const ProductsList = () => {
@@ -18,7 +19,9 @@ const ProductsList = () => {
     return (
         <div className='ProductsList' >
             <div className='searchProductContainer'>
+                <buttom>ALL</buttom>
                 <SelectCategory setProducts={setProducts} />
+                <SearchProduct />
             </div>
             {
                 Products.map( Product => (
