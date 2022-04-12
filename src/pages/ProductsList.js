@@ -3,6 +3,9 @@ import axios from 'axios';
 import { useState } from 'react';
 import {Link, useParams} from 'react-router-dom'
 import '../styles/ProductList.css';
+//import components
+import SelectCategory from '../components/SelectCategory';
+
 
 const ProductsList = () => {
     const [Products, setProducts] = useState([]);
@@ -14,6 +17,9 @@ const ProductsList = () => {
     
     return (
         <div className='ProductsList' >
+            <div className='searchProductContainer'>
+                <SelectCategory setProducts={setProducts} />
+            </div>
             {
                 Products.map( Product => (
                     <Link className='link' to={`/productInfo/${Products.id}`} >
