@@ -5,3 +5,20 @@
     box-sizing: border-box;
     font-family: 'Yantramanav', sans-serif;
 }
+.App{
+  padding: 20px;
+  min-width: 320px;
+  max-width: 1500px;
+  /* background-color: pink; */
+}
+@media only screen and (min-width:568px){
+  .App{
+    /* background-color: rgb(147, 20, 158); */
+  }
+}
+@media only screen and (min-width:990px){
+  .App{
+    padding: 0;
+    /* background-color: rgb(16, 6, 17); */
+  }
+}

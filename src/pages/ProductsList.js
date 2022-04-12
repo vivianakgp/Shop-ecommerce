@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import '../styles/ProductList.css';
 //import components
 import SelectCategory from '../components/SelectCategory';
+import SearchProduct from '../components/SearchProduct';
 
 
 const ProductsList = () => {
@@ -16,25 +17,33 @@ const ProductsList = () => {
     console.log(Products)
     
     return (
-        <div className='ProductsList' >
-            <div className='searchProductContainer'>
+        <div className="ProductsList">
+            <div className="subMenu__Container">
+                <buttom>ALL</buttom>
                 <SelectCategory setProducts={setProducts} />
+                <SearchProduct setProducts={setProducts} />
             </div>
+            <div className="cards__Container">
             {
                 Products.map( Product => (
                     <Link className='link' key={Product.id} to={`/productInfo/${Product.id}`} >
-                    <div className="productContainer"  >
-                        <h3 className='productTitle' >{Product?.title} </h3>
-                        <img 
-                            src={Product?.productImgs} 
-                            alt={Product?.title} 
-                            className='images'
-                        />
-                        <p>Prirce <span> {Product?.price} </span> </p>
-                    </div>
+                        <div className="card">
+                            <div className='card__imgContainer'>
+                                <img 
+                                    src={Product?.productImgs} 
+                                    alt={Product?.title} 
+                                />
+                            </div>
+                            <div className="card__info">
+                                <h3>{Product?.title}</h3>
+                                <p>Prirce <span> {Product?.price} </span> </p>
+                                <button>car</button>
+                            </div>
+                        </div>
                     </Link>
                 ) )
             }
+            </div>
         </div>
     );
 };

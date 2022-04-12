@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import './styles/index.css';
+
 // redux
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
