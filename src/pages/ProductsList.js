@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
-import {Link, useParams} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import '../styles/ProductList.css';
 //import components
 import SelectCategory from '../components/SelectCategory';
@@ -22,8 +22,8 @@ const ProductsList = () => {
             </div>
             {
                 Products.map( Product => (
-                    <Link className='link' to={`/productInfo/${Products.id}`} >
-                    <div className="productContainer" key={Product.id} >
+                    <Link className='link' key={Product.id} to={`/productInfo/${Product.id}`} >
+                    <div className="productContainer"  >
                         <h3 className='productTitle' >{Product?.title} </h3>
                         <img 
                             src={Product?.productImgs} 
