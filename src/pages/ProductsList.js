@@ -19,7 +19,7 @@ const ProductsList = () => {
     return (
         <div className="ProductsList">
             <div className="subMenu__Container">
-                <buttom>ALL</buttom>
+                <button>ALL</button>
                 <SelectCategory setProducts={setProducts} />
                 <SearchProduct setProducts={setProducts} />
             </div>
