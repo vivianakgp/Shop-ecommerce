@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 import axios from 'axios';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import '../styles/productsInfo.css';
 
 

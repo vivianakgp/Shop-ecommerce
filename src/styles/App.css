@@ -6,9 +6,10 @@
     font-family: 'Yantramanav', sans-serif;
 }
 .App{
-  padding: 20px;
-  min-width: 320px;
-  max-width: 1500px;
+    margin:2rem 0 20px 0;
+    padding: 0 20px 0 20px;
+    min-width: 320px;
+    max-width: 1500px;
   /* background-color: pink; */
 }
 @media only screen and (min-width:568px){

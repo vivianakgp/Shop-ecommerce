@@ -1,5 +1,51 @@
-.menu{
+.Menu{
+    /* background: rgb(104, 103, 103); */
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 60px;
-    background: rgb(104, 103, 103);
+    margin-bottom: 1.5rem;
+}
+.logo{
+    /* width: 50%; */
+    height: inherit;
+    /* background-color: rgb(73, 71, 71); */
+
+}
+.logo img{
+    width: auto;
+    height: 100%;
+}
+.icons{
+    /* width: 50%; */
+    /* background-color: rgb(243, 114, 226); */
+    display: flex;
+    justify-content: baseline;
+}
+.icons span{
+    font-size: 20px;
+    margin-right: 16px;
+    color:rgb(187, 176, 176);
+    cursor: pointer;
+    transition: all 4ms;
+
+    /* padding: 5px;     */
+    /* background-color: aliceblue; */
+
+}
+.icons span:hover{
+    color:rgb(88, 88, 88);
+    transition: all 4ms;
+}
+
+@media only screen and (min-width:990px){
+
+    .Menu{
+        max-width: 75%;
+        margin: 1.5rem auto 1.5rem auto;
+        /* background-color: rgb(255, 0, 128); */
+    }
+
 }
