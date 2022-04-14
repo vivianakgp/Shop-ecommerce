@@ -36,8 +36,8 @@ const ProductsList = () => {
                             </div>
                             <div className="card__info">
                                 <h3>{Product?.title}</h3>
-                                <p>Prirce <span> {Product?.price} </span> </p>
-                                <button>car</button>
+                                <p>Prirce <span> {`$${Product?.price}`} </span> </p>
+                                {/* <p>Category <span> {`$${Product?.category.name}`} </span> </p> */}
                             </div>
                         </div>
                     </Link>
