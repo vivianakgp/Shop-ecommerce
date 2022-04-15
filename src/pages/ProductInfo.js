@@ -7,7 +7,8 @@ import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import '../styles/productsInfo.css';
 
 
-const ProductInfo = () => {
+
+const ProductInfo = ( {filterProducts} ) => {
 
     const { id } = useParams();
 
@@ -16,7 +17,11 @@ const ProductInfo = () => {
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}/`)
             .then(res => setIdProduct(res.data.data.product))
     }, [id])
-    console.log(idProduct)
+    
+    
+    
+
+    
 
     return (
         <div className='ProductInfo' >
@@ -42,6 +47,9 @@ const ProductInfo = () => {
                 </div>
             </div>
             {/* <button></button> */}
+
+            {/* filter similar products */}
+
         </div>
     );
 };

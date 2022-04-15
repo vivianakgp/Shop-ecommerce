@@ -14,7 +14,7 @@ const ProductsList = () => {
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products`)
             .then(res => setProducts(res.data.data.products))
     }, []);
-    console.log(Products)
+    
     
     return (
         <div className="ProductsList">
