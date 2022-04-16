@@ -7,7 +7,8 @@ import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import '../styles/productsInfo.css';
 
 
-const ProductInfo = ({Products}) => {
+
+const ProductInfo = ( {filterProducts, Products} ) => {
 
     const { id } = useParams();
 
@@ -18,7 +19,6 @@ const ProductInfo = ({Products}) => {
     }, [id])
     console.log(idProduct)
     console.log(`category of product: ${idProduct.category}`)
-    console.log(Products)
     const currentCategory = idProduct.category;
     const sameProductsByCategory = Products.filter(product => product.category.name === currentCategory);
     console.log(sameProductsByCategory)
@@ -68,6 +68,9 @@ const ProductInfo = ({Products}) => {
                     }
                 </div>
             {/* <button></button> */}
+
+            {/* filter similar products */}
+
         </div>
     );
 };
