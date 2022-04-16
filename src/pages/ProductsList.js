@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import { useState } from 'react';
+import React from 'react';
+// , { useEffect }
+// import axios from 'axios';
+// import { useState } from 'react';
 import {Link} from 'react-router-dom'
 import '../styles/ProductList.css';
 //import components
@@ -8,12 +9,12 @@ import SelectCategory from '../components/SelectCategory';
 import SearchProduct from '../components/SearchProduct';
 
 
-const ProductsList = () => {
-    const [Products, setProducts] = useState([]);
-    useEffect(() => {
-        axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products`)
-            .then(res => setProducts(res.data.data.products))
-    }, []);
+const ProductsList = ({Products, setProducts}) => {
+    // const [Products, setProducts] = useState([]);
+    // useEffect(() => {
+    //     axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products`)
+    //         .then(res => setProducts(res.data.data.products))
+    // }, []);
     console.log(Products)
     
     return (
@@ -36,8 +37,8 @@ const ProductsList = () => {
                             </div>
                             <div className="card__info">
                                 <h3>{Product?.title}</h3>
-                                <p>Prirce <span> {Product?.price} </span> </p>
-                                <button>car</button>
+                                <p>Prirce <span> {`$${Product?.price}`} </span> </p>
+                                {/* <p>Category <span> {`$${Product?.category.name}`} </span> </p> */}
                             </div>
                         </div>
                     </Link>

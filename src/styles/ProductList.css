@@ -46,21 +46,29 @@
 }
 .card__info{
     padding: 25px;
+    font-size: 18px;
+    font-weight: 600;
+
 }
-.card__info button{
-    position: absolute;
-    right: 30px;
-    bottom:30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border-style: none;
-    background-color: rgb(226, 60, 60);
+.card__info h3{
+    font-weight: 800;
+    font-size: 22px;
+    color: rgb(51, 50, 50);
+}
+.card__info p{
+    color: rgb(145, 141, 141);
+}
+.card__info p span{
+    display: block;
+    font-weight: 900;
+    color: rgb(51, 50, 50);
+
+
 }
 
 @media only screen and (min-width:568px){
     .cards__Container{
-        /* background-color: rgb(255, 0, 128); */
+        /* background-color: rgb(217, 255, 0); */
     }
     .link{
         width: 46%;
@@ -70,9 +78,9 @@
 @media only screen and (min-width:990px){
 
     .cards__Container{
-        max-width: 75%;
+        max-width: 65%;
         margin: 0 auto;;
-        /* background-color: rgb(255, 0, 128); */
+        /* background-color: rgb(0, 183, 255); */
     }
 
 }
