@@ -16,10 +16,11 @@ const SelectBox = ({setProducts}) => {
         .then(res => setProducts(res.data.data.products))
     }
     
+    // selected disabled
     return (
         <div className='selectBox'>
             <select onChange={filterProducts}>
-                <option selected disabled>category</option>
+                <option >category</option>
                 {
                     categories?.map(category => (
                         <option key={category.id} value={category.id}>{category.name}</option>

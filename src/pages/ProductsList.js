@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import '../styles/ProductList.css';
 //import components
@@ -15,11 +15,10 @@ const ProductsList = () => {
             .then(res => setProducts(res.data.data.products))
     }, []);
     
-    
     return (
         <div className="ProductsList">
             <div className="subMenu__Container">
-                <buttom>ALL</buttom>
+                <button>ALL</button>
                 <SelectCategory setProducts={setProducts} />
                 <SearchProduct setProducts={setProducts} />
             </div>
@@ -36,8 +35,8 @@ const ProductsList = () => {
                             </div>
                             <div className="card__info">
                                 <h3>{Product?.title}</h3>
-                                <p>Prirce <span> {Product?.price} </span> </p>
-                                <button>car</button>
+                                <p>Prirce <span> {`$${Product?.price}`} </span> </p>
+                                {/* <p>Category <span> {`$${Product?.category.name}`} </span> </p> */}
                             </div>
                         </div>
                     </Link>
