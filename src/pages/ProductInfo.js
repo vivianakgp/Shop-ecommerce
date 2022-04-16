@@ -26,7 +26,7 @@ const ProductInfo = ({Products}) => {
     return (
         <div className="ProductInfo" >
             <div className="navProduct">
-                <Link className='navProduct-Link' to={`/`} >Home</Link>
+                <Link className='navProduct-Link' to={`/`}>Home</Link>
                 <FontAwesomeIcon icon={faArrowRight}/>
                 <span className='navProduct-Link' > {idProduct?.title} </span>
             </div>

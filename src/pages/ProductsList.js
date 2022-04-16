@@ -10,11 +10,7 @@ import SearchProduct from '../components/SearchProduct';
 
 
 const ProductsList = ({Products, setProducts}) => {
-    // const [Products, setProducts] = useState([]);
-    // useEffect(() => {
-    //     axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products`)
-    //         .then(res => setProducts(res.data.data.products))
-    // }, []);
+
     console.log(Products)
     
     return (
