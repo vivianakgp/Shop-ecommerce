@@ -25,27 +25,37 @@
     justify-content: baseline;
 }
 .icons span{
+
     font-size: 20px;
     margin-right: 16px;
     color:rgb(187, 176, 176);
     cursor: pointer;
-    transition: all 4ms;
+    transition: all 1s;
+    cursor: pointer;
 
     /* padding: 5px;     */
     /* background-color: aliceblue; */
 
 }
-.icons span:hover{
+.icons> span:hover{
     color:rgb(88, 88, 88);
-    transition: all 4ms;
+    transform: scale(1.2);
+    transition: all 1s ease;
 }
 
 @media only screen and (min-width:990px){
 
     .Menu{
+        position: relative;
         max-width: 75%;
-        margin: 1.5rem auto 1.5rem auto;
+        height: 80px;
+        margin:  5rem auto;
+        justify-content: center;
         /* background-color: rgb(255, 0, 128); */
+    }
+    .icons{
+        position: absolute;
+        right: 0;
     }
 
 }

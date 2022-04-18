@@ -7,11 +7,8 @@ import {faArrowRight, faArrowLeft, faCar} from '@fortawesome/free-solid-svg-icon
 import '../styles/productsInfo.css';
 
 
-
-const ProductInfo = ( {filterProducts, Products} ) => {
-
+const ProductInfo = ({Products}) => {
     const { id } = useParams();
-
     const [ idProduct, setIdProduct ] = useState({});
     // state Counter
     const [Counter, setCounter] = useState(0);
@@ -19,18 +16,20 @@ const ProductInfo = ( {filterProducts, Products} ) => {
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}/`)
             .then(res => setIdProduct(res.data.data.product))
     }, [id])
-    console.log(idProduct)
-    console.log(`category of product: ${idProduct.category}`)
+
     const currentCategory = idProduct.category;
     const sameProductsByCategory = Products.filter(product => product.category.name === currentCategory);
+<<<<<<< HEAD
     console.log(sameProductsByCategory)
     const Increment = () => setCounter(Counter + 1);
     const Decrement = () => setCounter(Counter - 1);
+=======
+>>>>>>> f9ed3a31fab33247760fd687882f674ba7a104b5
 
     return (
         <div className="ProductInfo" >
             <div className="navProduct">
-                <Link className='navProduct-Link' to={`/`} >Home</Link>
+                <Link className='navProduct-Link' to={`/`}>Home</Link>
                 <FontAwesomeIcon icon={faArrowRight}/>
                 <span className='navProduct-Link' > {idProduct?.title} </span>
             </div>
@@ -83,7 +82,11 @@ const ProductInfo = ( {filterProducts, Products} ) => {
                         </Link>
                         ) )
                     }
+<<<<<<< HEAD
             </div>
+=======
+                </div>
+>>>>>>> f9ed3a31fab33247760fd687882f674ba7a104b5
         </div>
     );
 };

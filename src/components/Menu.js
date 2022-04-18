@@ -9,10 +9,13 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/ecommerce-logo-png-11.png';
 // components
 import Login from './Login';
+<<<<<<< HEAD
 import MenuCar from './MenuCar';
 import { useDispatch } from 'react-redux';
 import { getCartThunk } from '../redux/actions';
 
+=======
+>>>>>>> f9ed3a31fab33247760fd687882f674ba7a104b5
 const Menu = () => {
 
     const dispatch = useDispatch();
