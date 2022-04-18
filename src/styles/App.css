@@ -14,12 +14,12 @@
 }
 @media only screen and (min-width:568px){
   .App{
-    background-color: rgb(245, 167, 252);
+    /* background-color: rgb(245, 167, 252); */
   }
 }
 @media only screen and (min-width:990px){
   .App{
     padding: 0;
-    background-color: rgb(161, 222, 224);
+    /* background-color: rgb(161, 222, 224); */
   }
 }

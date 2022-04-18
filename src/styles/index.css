@@ -1,16 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+.searchContainer {
+  margin: 0 5px;
+}
 .searchContainer .search-box {
-  border: solid 2px black;
+  border: solid 2px rgb(116, 117, 115);
   display: inline-block;
   position: relative;
   border-radius: 50px;
 }
 .searchContainer .search-box input[type=text] {
-  font-family: Raleway, sans-serif;
-  font-size: 16px;
-  width: 30px;
-  height: 30px;
-  padding: 10px;
-  padding-left: 20px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.2rem;
+  width: 25px;
+  height: 25px;
+  padding-left: 25px;
   border: none;
   box-sizing: border-box;
   border-radius: 50px;
@@ -25,7 +28,7 @@
 }
 .searchContainer .search-box input[type=text]:focus + button[type=reset], .searchContainer .search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
   bottom: 5px;
-  right: 10px;
+  right: 0px;
   transition: bottom 150ms ease-out 800ms, right 150ms ease-out 800ms;
 }
 .searchContainer .search-box input[type=text]:focus + button[type=reset]:after, .searchContainer .search-box input[type=text]:not(:placeholder-shown) + button[type=reset]:after {
@@ -36,8 +39,8 @@
 }
 .searchContainer .search-box button[type=reset] {
   background-color: transparent;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border: 0;
   padding: 0;
   outline: 0;
@@ -45,22 +48,22 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: -9px;
-  right: -11px;
+  bottom: -12px;
+  right: -15px;
   transition: bottom 150ms ease-out 150ms, right 150ms ease-out 150ms;
 }
 .searchContainer .search-box button[type=reset]:before, .searchContainer .search-box button[type=reset]:after {
   content: "";
-  height: 20px;
-  border-left: solid 3px black;
+  height: 18px;
+  border-left: solid 3px rgb(116, 117, 115);
   position: absolute;
   transform: rotate(-45deg);
 }
 .searchContainer .search-box button[type=reset]:after {
   transform: rotate(45deg);
   opacity: 0;
-  top: -20px;
-  right: -10px;
+  left: 5px;
+  bottom: -10px;
   transition: top 150ms ease-out, right 150ms ease-out, opacity 150ms ease-out;
 }
 

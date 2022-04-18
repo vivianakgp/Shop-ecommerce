@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 const SearchProduct = ({setProducts}) => {
     const [ value, setValue ] = useState('');
     const submit= e =>{
@@ -18,7 +19,7 @@ const SearchProduct = ({setProducts}) => {
             <form className='search-box' onSubmit={submit}>
             <input 
             type='text' 
-            placeholder='search'
+            placeholder='Name'
             onChange={e => setValue(e.target.value)}
             value={value}
             />
