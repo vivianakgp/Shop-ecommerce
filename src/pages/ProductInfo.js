@@ -17,11 +17,9 @@ const ProductInfo = ( {filterProducts, Products} ) => {
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}/`)
             .then(res => setIdProduct(res.data.data.product))
     }, [id])
-    console.log(idProduct)
-    console.log(`category of product: ${idProduct.category}`)
+
     const currentCategory = idProduct.category;
     const sameProductsByCategory = Products.filter(product => product.category.name === currentCategory);
-    console.log(sameProductsByCategory)
 
     return (
         <div className="ProductInfo" >

@@ -34,6 +34,7 @@
 .Form .close:hover{
     color: black;
     border-color: black;
+    transform: scale(1.1);
     transition: all .5s linear;
 }
 .Form .imgContainer{

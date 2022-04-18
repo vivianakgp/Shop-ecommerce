@@ -1,19 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 .searchContainer {
-  background-color: aqua;
+  margin: 0 5px;
 }
 .searchContainer .search-box {
-  border: solid 2px black;
+  border: solid 2px rgb(116, 117, 115);
   display: inline-block;
   position: relative;
   border-radius: 50px;
 }
 .searchContainer .search-box input[type=text] {
-  font-family: Raleway, sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  width: 50px;
-  height: 50px;
-  padding: 5px 40px 5px 10px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.2rem;
+  width: 25px;
+  height: 25px;
+  padding-left: 25px;
   border: none;
   box-sizing: border-box;
   border-radius: 50px;
@@ -23,12 +23,12 @@
   outline: none;
 }
 .searchContainer .search-box input[type=text]:focus, .searchContainer .search-box input[type=text]:not(:placeholder-shown) {
-  width: 300px;
+  width: 150px;
   transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .searchContainer .search-box input[type=text]:focus + button[type=reset], .searchContainer .search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
-  bottom: 13px;
-  right: 10px;
+  bottom: 5px;
+  right: 0px;
   transition: bottom 150ms ease-out 800ms, right 150ms ease-out 800ms;
 }
 .searchContainer .search-box input[type=text]:focus + button[type=reset]:after, .searchContainer .search-box input[type=text]:not(:placeholder-shown) + button[type=reset]:after {
@@ -39,8 +39,8 @@
 }
 .searchContainer .search-box button[type=reset] {
   background-color: transparent;
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   border: 0;
   padding: 0;
   outline: 0;
@@ -48,22 +48,22 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: -13px;
+  bottom: -12px;
   right: -15px;
   transition: bottom 150ms ease-out 150ms, right 150ms ease-out 150ms;
 }
 .searchContainer .search-box button[type=reset]:before, .searchContainer .search-box button[type=reset]:after {
   content: "";
-  height: 25px;
-  border-left: solid 5px black;
+  height: 18px;
+  border-left: solid 3px rgb(116, 117, 115);
   position: absolute;
   transform: rotate(-45deg);
 }
 .searchContainer .search-box button[type=reset]:after {
   transform: rotate(45deg);
   opacity: 0;
-  top: -20px;
-  right: -10px;
+  left: 5px;
+  bottom: -10px;
   transition: top 150ms ease-out, right 150ms ease-out, opacity 150ms ease-out;
 }
 
