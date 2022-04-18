@@ -15,7 +15,6 @@ const SelectBox = ({setProducts}) => {
         // console.log(e.target.value)
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products?category=${e.target.value}`)
         .then(res => setProducts(res.data.data.products))
-
     };
     return (
         <div className='selectBox'> 

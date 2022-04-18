@@ -8,8 +8,7 @@ import SearchProduct from '../components/SearchProduct';
 
 
 const ProductsList = ({Products, setProducts}) => {
-    console.log(Products.length)
-    
+      console.log(Products)
     return (
         <div className="ProductsList">
             <div className="subMenu__Container">
