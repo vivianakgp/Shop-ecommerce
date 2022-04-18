@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import {Link} from 'react-router-dom'
 import '../styles/ProductList.css';
 import gif404 from '../images/404.gif';
@@ -8,14 +9,21 @@ import SearchProduct from '../components/SearchProduct';
 
 
 const ProductsList = ({Products, setProducts}) => {
-      console.log(Products)
+    console.log(Products);
+
+    const allProducts = ()=>{
+        console.log('all products')
+        axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products`)
+        .then(res => setProducts(res.data.data.products))
+    };
     return (
         <div className="ProductsList">
             <div className="subMenu__Container">
-                <button>All</button><hr/>
+                <button onClick={allProducts}>All</button><hr/>
                 <SelectCategory setProducts={setProducts} /><hr/>
                 <SearchProduct setProducts={setProducts} />
             </div>
+            <hr style={{width:"70%", margin:"20px auto"}}/>
             <div className="cards__Container">
                 {
                     Products.length === 0?(
@@ -29,11 +37,10 @@ const ProductsList = ({Products, setProducts}) => {
                                 <Link className='link' key={Product.id} to={`/productInfo/${Product.id}`} >
                                     <div className="card">
                                         <div className='card__imgContainer'>
-                                            <img 
-                                                src={Product?.productImgs} 
-                                                alt={Product?.title} 
-                                            />
+                                            <img className="over" src={Product?.productImgs?.[1]} alt={Product?.title}/>
+                                            <img src={Product?.productImgs?.[2]} alt={Product?.title}/>
                                         </div>
+                                        <hr style={{color:"#918d8d"}}/>
                                         <div className="card__info">
                                             <h3>{Product?.title}</h3>
                                             <p>Prirce <span> {`$${Product?.price}`} </span> </p>
