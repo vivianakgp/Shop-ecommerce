@@ -28,17 +28,7 @@ const SelectBox = ({setProducts}) => {
                         }
                         </ul>
                     </button>
-
         </div>
     )
-
 }
 export default SelectBox;
-{/* <select onChange={filterProducts}>
-<option value="" disabled>Category</option>
-{
-    categories?.map(category => (
-        <option key={category.id} value={category.id}>{category.name}</option>
-    ))
-}
-</select> */}
