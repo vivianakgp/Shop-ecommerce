@@ -6,6 +6,7 @@ import gif404 from '../images/404.gif';
 //import components
 import SelectCategory from '../components/SelectCategory';
 import SearchProduct from '../components/SearchProduct';
+import AnimateComponent from '../components/AnimateComponent';
 
 
 const ProductsList = ({Products, setProducts}) => {
@@ -24,35 +25,38 @@ const ProductsList = ({Products, setProducts}) => {
                 <SearchProduct setProducts={setProducts} />
             </div>
             <hr style={{width:"70%", margin:"20px auto"}}/>
-            <div className="cards__Container">
-                {
-                    Products.length === 0?(
-                        <div className="productsNotFound">
-                            <p>Products Not Found</p>
-                            <img src={gif404} alt="404error"/>
-                        </div>
-                    ): (
-                        
-                            Products.map( Product => (
-                                <Link className='link' key={Product.id} to={`/productInfo/${Product.id}`} >
-                                    <div className="card">
-                                        <div className='card__imgContainer'>
-                                            <img className="over" src={Product?.productImgs?.[1]} alt={Product?.title}/>
-                                            <img src={Product?.productImgs?.[2]} alt={Product?.title}/>
+            <AnimateComponent>
+                <div className="cards__Container">
+                    {
+                        Products.length === 0?(
+                            <div className="productsNotFound">
+                                <p>Products Not Found</p>
+                                <img src={gif404} alt="404error"/>
+                            </div>
+                        ): (
+                            
+                                Products.map( Product => (
+                                    <Link className='link' key={Product.id} to={`/productInfo/${Product.id}`} >
+                                        <div className="card">
+                                            <div className='card__imgContainer'>
+                                                <img className="over" src={Product?.productImgs?.[1]} alt={Product?.title}/>
+                                                <img src={Product?.productImgs?.[2]} alt={Product?.title}/>
+                                            </div>
+                                            <hr style={{color:"#918d8d"}}/>
+                                            <div className="card__info">
+                                                <h3>{Product?.title}</h3>
+                                                <p>Prirce <span> {`$${Product?.price}`} </span> </p>
+                                                {/* <p>Category <span> {`$${Product?.category.name}`} </span> </p> */}
+                                            </div>
                                         </div>
-                                        <hr style={{color:"#918d8d"}}/>
-                                        <div className="card__info">
-                                            <h3>{Product?.title}</h3>
-                                            <p>Prirce <span> {`$${Product?.price}`} </span> </p>
-                                            {/* <p>Category <span> {`$${Product?.category.name}`} </span> </p> */}
-                                        </div>
-                                    </div>
-                                </Link>
-                            ) )
-                        
-                    )
-                }
-            </div>
+                                    </Link>
+                                ) )
+                            
+                        )
+                    }
+                </div>
+            </AnimateComponent>
+
         </div>
     );
 };

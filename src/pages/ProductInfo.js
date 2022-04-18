@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import '../styles/productsInfo.css';
+import AnimateComponent from '../components/AnimateComponent';
 
 
 
-const ProductInfo = ( {filterProducts, Products} ) => {
+const ProductInfo = ({ Products }) => {
 
     const { id } = useParams();
 
@@ -22,54 +22,51 @@ const ProductInfo = ( {filterProducts, Products} ) => {
     const sameProductsByCategory = Products.filter(product => product.category.name === currentCategory);
 
     return (
-        <div className="ProductInfo" >
-            <div className="navProduct">
-                <Link className='navProduct-Link' to={`/`} >Home</Link>
-                <FontAwesomeIcon icon={faArrowRight}/>
-                <span className='navProduct-Link' > {idProduct?.title} </span>
-            </div>
-            <div className="moreDate">
-                <div className="dates">
-                    <img 
-                        className="productImage"
-                        src={idProduct?.productImgs} 
-                        alt={idProduct?.title} 
-                    />
-                    <h3 className="productDate" >{idProduct?.title}</h3>
-                    <p className="productDate" >Precio <span>{idProduct?.price}</span> </p>
+        <AnimateComponent>
+            <div className="ProductInfo" >
+                <div className="navProduct">
+                    <Link className='navProduct-Link' to={`/`} >Home</Link>
+                    <FontAwesomeIcon icon={faArrowRight}/>
+                    <span className='navProduct-Link' > {idProduct?.title} </span>
                 </div>
-
-                <div className="descriptionProduct">
-                    <h4>Descripción</h4>
-                    <p>{idProduct?.description}</p>
+                <div className="moreDate">
+                    <div className="dates">
+                        <img 
+                            className="productImage"
+                            src={idProduct?.productImgs} 
+                            alt={idProduct?.title} 
+                        />
+                        <h3 className="productDate" >{idProduct?.title}</h3>
+                        <p className="productDate" >Precio <span>{idProduct?.price}</span> </p>
+                    </div>
+                    <div className="descriptionProduct">
+                        <h4>Descripción</h4>
+                        <p>{idProduct?.description}</p>
+                    </div>
                 </div>
-            </div>
-            <div className="sameProductsContainer">
-                    {
-                        sameProductsByCategory?.map(product => product.id !== idProduct.id && (
-                            <Link className='link' key={product.id} to={`/productInfo/${product.id}`} >
-                            <div className="card">
-                                <div className='card__imgContainer'>
-                                    <img 
-                                        src={product?.productImgs} 
-                                        alt={product?.title} 
-                                    />
+                <div className="sameProductsContainer">
+                        {
+                            sameProductsByCategory?.map(product => product.id !== idProduct.id && (
+                                <Link className='link' key={product.id} to={`/productInfo/${product.id}`} >
+                                <div className="card">
+                                    <div className='card__imgContainer'>
+                                        <img 
+                                            src={product?.productImgs} 
+                                            alt={product?.title} 
+                                        />
+                                    </div>
+                                    <div className="card__info">
+                                        <h3>{product?.title}</h3>
+                                        <p>Prirce <span> {`$${product?.price}`} </span> </p>
+                                        {/* <p>Category <span> {`$${product?.category.name}`} </span> </p> */}
+                                    </div>
                                 </div>
-                                <div className="card__info">
-                                    <h3>{product?.title}</h3>
-                                    <p>Prirce <span> {`$${product?.price}`} </span> </p>
-                                    <p>Category <span> {`$${product?.category.name}`} </span> </p>
-                                </div>
-                            </div>
-                        </Link>
-                        ) )
-                    }
-                </div>
-            {/* <button></button> */}
-
-            {/* filter similar products */}
-
-        </div>
+                            </Link>
+                            ) )
+                        }
+                    </div>
+            </div>
+        </AnimateComponent>
     );
 };
 
