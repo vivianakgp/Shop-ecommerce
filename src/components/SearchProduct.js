@@ -5,9 +5,12 @@ const SearchProduct = ({setProducts}) => {
     const [ value, setValue ] = useState('');
     const submit= e =>{
         e.preventDefault();
-        // console.log(value)
-        axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products?query=${value}`)
+        const valueInLowerCase = value.substring(1).toLowerCase();
+        const newValue = value.charAt(0).toUpperCase()+valueInLowerCase;
+        // console.log(newValue)
+        axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products?query=${newValue}`)
         .then(res => setProducts(res.data.data.products))
+        .then(()=> setValue(''))
         
     }
     return (

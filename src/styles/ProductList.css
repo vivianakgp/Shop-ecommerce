@@ -1,14 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 .ProductsList{
     /* background-color: rgb(80, 79, 79); */
 }
+/* sub menu */
 .subMenu__Container{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    overflow: hidden;    
-    background-color: antiquewhite;
+    height: 40px;
+    padding: 5px 0;
+    /* overflow: hidden;     */
+    /* background-color: antiquewhite; */
 }
+.subMenu__Container > button{
+    margin: 0 5px;
+    font-size: 1.3rem;
+    font-family: 'Quicksand', sans-serif;
+    border-style: none;
+    background-color: transparent;
+
+}
+.subMenu__Container hr{
+    /* width: 15px; */
+    height: 100%;
+    font-weight: 600;
+    transform: rotate(20deg);
+
+}
+
+/* list of cproducts */
 .cards__Container{
     display: flex;
     flex-wrap: wrap;

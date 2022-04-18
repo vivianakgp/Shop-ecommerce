@@ -1,20 +1,24 @@
 $search-time: 800ms;
 $reset-time: 150ms;
 .searchContainer{
-    background-color: aqua;
+    // background-color: rgb(136, 255, 0);
 
     .search-box {
         border: solid 2px black;
         display: inline-block;
         position: relative;
+		// z-index: 100;
         border-radius: 50px;
         input[type="text"] {
             font-family: Raleway, sans-serif;
-            font-size: 20px;
-            font-weight: bold;
-            width: 50px;
-            height: 50px;
-            padding: 5px 40px 5px 10px;
+            font-size: 16px;
+            // font-weight: bold;
+            width: 30px;
+            height: 30px;
+            // padding: 5px 40px 5px 10px;
+            padding:  10px;
+			padding-left: 20px;
+
             border: none;
             box-sizing: border-box;
             border-radius: 50px;
@@ -23,10 +27,10 @@ $reset-time: 150ms;
 			outline: none;
 		}
 		&:focus, &:not(:placeholder-shown) {
-			width: 300px;
+			width: 150px;
 			transition: width $search-time cubic-bezier(0.68, -0.55, 0.27, 1.55);
 			+ button[type="reset"] {
-				bottom: 13px;
+				bottom: 5px;
 				right: 10px;
 				transition:
 					bottom $reset-time ease-out $search-time
@@ -45,8 +49,9 @@ $reset-time: 150ms;
 	}
 	button[type="reset"] {
 		background-color: transparent;
-		width: 25px;
-		height: 25px;
+		// background-color: palevioletred;
+		width: 20px;
+		height: 20px;
 		border: 0;
 		padding: 0;
 		outline: 0;
@@ -54,13 +59,13 @@ $reset-time: 150ms;
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		bottom: -13px;
-		right: -15px;
+		bottom: -9px;
+		right: -11px;
 		transition: bottom $reset-time ease-out $reset-time, right $reset-time ease-out $reset-time;
 		&:before, &:after {
 			content: "";
-			height: 25px;
-			border-left: solid 5px black;
+			height: 20px;
+			border-left: solid 3px  black;
 			position: absolute;
 			transform: rotate(-45deg);
 		}
