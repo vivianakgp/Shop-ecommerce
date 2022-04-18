@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 .searchContainer {
-  margin: 0 5px;
+  margin: 0 8px;
 }
 .searchContainer .search-box {
   border: solid 2px rgb(116, 117, 115);
@@ -10,10 +10,10 @@
 }
 .searchContainer .search-box input[type=text] {
   font-family: "Quicksand", sans-serif;
-  font-size: 1.2rem;
-  width: 25px;
-  height: 25px;
-  padding-left: 25px;
+  font-size: 1rem;
+  width: 20px;
+  height: 20px;
+  padding-left: 18px;
   border: none;
   box-sizing: border-box;
   border-radius: 50px;
@@ -23,11 +23,12 @@
   outline: none;
 }
 .searchContainer .search-box input[type=text]:focus, .searchContainer .search-box input[type=text]:not(:placeholder-shown) {
-  width: 150px;
+  width: 120px;
+  height: 35px;
   transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .searchContainer .search-box input[type=text]:focus + button[type=reset], .searchContainer .search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
-  bottom: 5px;
+  bottom: 10px;
   right: 0px;
   transition: bottom 150ms ease-out 800ms, right 150ms ease-out 800ms;
 }
@@ -48,14 +49,14 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: -12px;
-  right: -15px;
+  bottom: -9px;
+  right: -20px;
   transition: bottom 150ms ease-out 150ms, right 150ms ease-out 150ms;
 }
 .searchContainer .search-box button[type=reset]:before, .searchContainer .search-box button[type=reset]:after {
   content: "";
-  height: 18px;
-  border-left: solid 3px rgb(116, 117, 115);
+  height: 15px;
+  border-left: solid 2px rgb(116, 117, 115);
   position: absolute;
   transform: rotate(-45deg);
 }
@@ -65,6 +66,12 @@
   left: 5px;
   bottom: -10px;
   transition: top 150ms ease-out, right 150ms ease-out, opacity 150ms ease-out;
+}
+
+@media only screen and (min-width: 568px) {
+  .searchContainer .search-box input[type=text]:focus, .searchContainer .search-box input[type=text]:not(:placeholder-shown) {
+    width: 170px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

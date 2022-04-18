@@ -37,7 +37,7 @@
     /* background-color: aliceblue; */
 
 }
-.icons span:hover{
+.icons> span:hover{
     color:rgb(88, 88, 88);
     transform: scale(1.2);
     transition: all 1s ease;
@@ -49,7 +49,7 @@
         position: relative;
         max-width: 75%;
         height: 80px;
-        margin: 1.5rem auto 5rem auto;
+        margin:  5rem auto;
         justify-content: center;
         /* background-color: rgb(255, 0, 128); */
     }

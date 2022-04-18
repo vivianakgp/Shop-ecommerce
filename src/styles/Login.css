@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 .Login{
     background-color: rgba(16, 15, 17, 0.589);
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
@@ -11,12 +11,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 320px;
 }
 
 .Login .Form{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    min-width: 300px;
+    max-width: 500px;
     padding: 30px 20px 60px 20px;
     background-color: white;
     border-radius: 8px;
@@ -90,10 +92,10 @@
 
 }
 @media only screen and (min-width:568px){
-    .Login .Form{
+    /* .Login .Form{
         max-width: 350px;
         padding: 30px 30px 70px 30px;
 
-    }
+    } */
 
 }
