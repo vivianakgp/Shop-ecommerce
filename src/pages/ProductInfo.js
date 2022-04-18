@@ -8,20 +8,15 @@ import '../styles/productsInfo.css';
 
 
 const ProductInfo = ({Products}) => {
-
     const { id } = useParams();
-
     const [ idProduct, setIdProduct ] = useState({});
     useEffect(() => {
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}/`)
             .then(res => setIdProduct(res.data.data.product))
     }, [id])
-    console.log(idProduct)
-    console.log(`category of product: ${idProduct.category}`)
-    console.log(Products)
+
     const currentCategory = idProduct.category;
     const sameProductsByCategory = Products.filter(product => product.category.name === currentCategory);
-    console.log(sameProductsByCategory)
 
     return (
         <div className="ProductInfo" >
@@ -67,7 +62,6 @@ const ProductInfo = ({Products}) => {
                         ) )
                     }
                 </div>
-            {/* <button></button> */}
         </div>
     );
 };

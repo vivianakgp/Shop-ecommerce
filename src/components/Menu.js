@@ -8,7 +8,6 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import logo from '../images/ecommerce-logo-png-11.png';
 // components
 import Login from './Login';
-
 const Menu = () => {
     const [ isLoginOpen, setIsLoginOpen ] = useState(false);
     return (
