@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {faArrowRight, faArrowLeft, faCar} from '@fortawesome/free-solid-svg-icons';
 import '../styles/productsInfo.css';
 
 
@@ -13,6 +13,8 @@ const ProductInfo = ( {filterProducts, Products} ) => {
     const { id } = useParams();
 
     const [ idProduct, setIdProduct ] = useState({});
+    // state Counter
+    const [Counter, setCounter] = useState(0);
     useEffect(() => {
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}/`)
             .then(res => setIdProduct(res.data.data.product))
@@ -22,6 +24,8 @@ const ProductInfo = ( {filterProducts, Products} ) => {
     const currentCategory = idProduct.category;
     const sameProductsByCategory = Products.filter(product => product.category.name === currentCategory);
     console.log(sameProductsByCategory)
+    const Increment = () => setCounter(Counter + 1);
+    const Decrement = () => setCounter(Counter - 1);
 
     return (
         <div className="ProductInfo" >
@@ -44,6 +48,19 @@ const ProductInfo = ( {filterProducts, Products} ) => {
                 <div className="descriptionProduct">
                     <h4>Descripción</h4>
                     <p>{idProduct?.description}</p>
+                    <div className="Counter">
+                        {/* Counter */}
+                        <button className="arrows" onClick={Increment} >
+                            <FontAwesomeIcon icon={faArrowRight} />
+                        </button>
+                        <h4> {Counter} </h4>
+                        <button className="arrows" onClick={Decrement} >
+                            <FontAwesomeIcon icon={faArrowLeft} />
+                        </button>
+                    </div>
+                    <div className="Car">
+                        <FontAwesomeIcon icon={faCar} />
+                    </div>
                 </div>
             </div>
             <div className="sameProductsContainer">
@@ -66,11 +83,7 @@ const ProductInfo = ( {filterProducts, Products} ) => {
                         </Link>
                         ) )
                     }
-                </div>
-            {/* <button></button> */}
-
-            {/* filter similar products */}
-
+            </div>
         </div>
     );
 };
