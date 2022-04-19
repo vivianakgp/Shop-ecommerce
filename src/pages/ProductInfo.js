@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import useCounter from '../hooks/useCounter';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faArrowRight, faArrowLeft, faCar} from '@fortawesome/free-solid-svg-icons';
 import '../styles/productsInfo.css';
+import { useDispatch } from 'react-redux';
+import { updateCartThunk } from '../redux/actions';
 
 
 const ProductInfo = ({Products}) => {
     const { id } = useParams();
     const [ idProduct, setIdProduct ] = useState({});
     // state Counter
-    const [Counter, setCounter] = useState(0);
+    // const [Counter, setCounter] = useState(0);
+    // useCounter
+    const { counter, decrement, increment } = useCounter();
     useEffect(() => {
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}/`)
             .then(res => setIdProduct(res.data.data.product))
@@ -19,12 +24,10 @@ const ProductInfo = ({Products}) => {
 
     const currentCategory = idProduct.category;
     const sameProductsByCategory = Products.filter(product => product.category.name === currentCategory);
-<<<<<<< HEAD
-    console.log(sameProductsByCategory)
-    const Increment = () => setCounter(Counter + 1);
-    const Decrement = () => setCounter(Counter - 1);
-=======
->>>>>>> f9ed3a31fab33247760fd687882f674ba7a104b5
+    // console.log(sameProductsByCategory)
+    // const Increment = () => setCounter(Counter + 1);
+    // const Decrement = () => setCounter(Counter - 1);
+    const dispatch = useDispatch();
 
     return (
         <div className="ProductInfo" >
@@ -49,17 +52,15 @@ const ProductInfo = ({Products}) => {
                     <p>{idProduct?.description}</p>
                     <div className="Counter">
                         {/* Counter */}
-                        <button className="arrows" onClick={Increment} >
+                        <button className="arrows" onClick={increment} >
                             <FontAwesomeIcon icon={faArrowRight} />
                         </button>
-                        <h4> {Counter} </h4>
-                        <button className="arrows" onClick={Decrement} >
+                        <h4> {counter} </h4>
+                        <button className="arrows" onClick={decrement} >
                             <FontAwesomeIcon icon={faArrowLeft} />
                         </button>
                     </div>
-                    <div className="Car">
-                        <FontAwesomeIcon icon={faCar} />
-                    </div>
+                    
                 </div>
             </div>
             <div className="sameProductsContainer">
@@ -77,16 +78,15 @@ const ProductInfo = ({Products}) => {
                                     <h3>{product?.title}</h3>
                                     <p>Prirce <span> {`$${product?.price}`} </span> </p>
                                     <p>Category <span> {`$${product?.category.name}`} </span> </p>
+                                    <button onClick={ () => dispatch(updateCartThunk(product.id)) } >
+                                    <FontAwesomeIcon icon={faCar}  />
+                                    </button>
                                 </div>
                             </div>
                         </Link>
                         ) )
                     }
-<<<<<<< HEAD
             </div>
-=======
-                </div>
->>>>>>> f9ed3a31fab33247760fd687882f674ba7a104b5
         </div>
     );
 };
