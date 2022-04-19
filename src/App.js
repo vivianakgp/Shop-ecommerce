@@ -13,7 +13,6 @@ import Menu from './components/Menu'
 import ProductsList from './pages/ProductsList';
 import ProductInfo from './pages/ProductInfo';
 
-
 function App() {
   const [Products, setProducts] = useState([]);
   useEffect(() => {
