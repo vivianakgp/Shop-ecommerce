@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 // react router
 import {
-  HashRouter,
-  BrowserRouter,
   Routes,
   Route,
   useLocation
