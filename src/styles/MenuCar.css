@@ -5,10 +5,11 @@
     right: 0;
     background: #fff;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
-    padding: 100px;
-    width: 15rem;
+    padding: 50px;
+    width: 20rem;
     transform: translateX(250px);
     transition: 1s;
+    overflow: auto;
 }
 .open{
     transform: translateX(0);
