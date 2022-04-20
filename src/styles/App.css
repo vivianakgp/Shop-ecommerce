@@ -10,7 +10,7 @@
     padding: 0 20px 0 20px;
     min-width: 320px;
     max-width: 1500px;
-  /* background-color: pink; */
+  /* background-color: rgb(66, 6, 16); */
 }
 @media only screen and (min-width:568px){
   .App{

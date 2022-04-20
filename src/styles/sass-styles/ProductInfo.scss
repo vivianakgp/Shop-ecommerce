@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+.productInfo{
+    /* background-color: rgb(241, 177, 220); */
+// .productInfo__subMenu  // // /// ///   childre 1  // // /// /// //
+    .productInfo__subMenu{
+        background-color: rgb(135, 135, 221);
+    }
+// .productDetail  // // /// ///  children 2  // // /// /// //
+    .productDetail{
+        /* background-color: rgb(244, 244, 247); */
+        margin: 28px 0;
+        .productImages{
+            display: flex;//test
+            justify-content: center;//test
+            >img{
+                width: 35vh;
+                display: flex;
+                margin-top: 1rem;
+
+            }
+        } // end productImages
+        .productData{
+            margin-top: 32px;
+            background-color: rgb(248, 170, 141);
+            >h1{font-size: 1.4rem;}
+            >.description{
+                background-color: palevioletred;
+            }
+            >.priceAndShoppingCar{
+                margin-top: 10px;
+                // border: .8px solid  rgb(10, 77, 71);
+                background-color: rgb(238, 226, 230);
+                .flexcontainer{
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 25px;
+                    background: indigo;
+
+                    >h3{
+                        width: 50%;
+                        font-size: 0.9rem;
+                        color:rgb(141, 140, 140);
+                        font-family: 'Quicksand', sans-serif;
+
+                        // background-color: rgb(17, 61, 46);
+                        >span{
+                            display: block;
+                            color: black;
+                        }
+                    }
+                    .Counter{
+                        // background-color: rgb(227, 255, 127);
+                        >h3{
+                            font-size: 0.9rem;
+                            color:rgb(141, 140, 140);
+                            font-family: 'Quicksand', sans-serif;
+
+                        }
+                        >p{}
+                    }
+                }
+                .carBtn{
+                    display: block;
+                    width: 100% ;
+                    color: white;
+                    padding: 15px;
+                    // margin: 0 auto 50px auto;
+                    font-size: 1.1rem;
+                    text-align: center;
+                    font-family: 'Quicksand', sans-serif;
+                    background-color: #0e0c0c;
+                    // background-color: #F85555;
+
+
+                }
+            }
+        } //end productData
+    }
+// .sameProductsContainer   // // /// /// //   children 3  // /// /// //
+    .sameProductsContainer{}
+}
+
+//////          medias      /// //// 
+@media only screen and (min-width:568px){
+    .productInfo{
+        background-color: rgb(240, 66, 182);
+        .productDetail{
+            display: flex;
+            flex-direction:row;
+            .productImages{}
+            .productData{
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+}
+@media only screen and (min-width:990px){
+
+    .productInfo{
+        background-color: rgb(175, 154, 168);
+    }
+}
+
+

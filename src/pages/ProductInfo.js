@@ -3,11 +3,11 @@ import { useParams, Link } from 'react-router-dom';
 import useCounter from '../hooks/useCounter';
 import axios from 'axios';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowRight, faArrowLeft, faCar} from '@fortawesome/free-solid-svg-icons';
+import {faPlus, faMinus, faCartShopping, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import AnimateComponent from '../components/AnimateComponent';
 // import { useDispatch } from 'react-redux';
 // import { updateCartThunk } from '../redux/actions';
-import '../styles/productsInfo.css';
+// import '../styles/productsInfo.css';
 
 const ProductInfo = ({ Products }) => {
 
@@ -25,39 +25,44 @@ const ProductInfo = ({ Products }) => {
     const sameProductsByCategory = Products.filter(product => product.category.name === currentCategory);
     return (
         <AnimateComponent>
-            <div className="ProductInfo" >
-                <div className="navProduct">
-                    <Link className='navProduct-Link' to={`/`} >Home</Link>
-                    <FontAwesomeIcon icon={faArrowRight}/>
-                    <span className='navProduct-Link' > {idProduct?.title} </span>
+            <div className="productInfo" >
+                <div className="productInfo__subMenu">
+                    <Link to={`/`} >Home</Link>
+                    <FontAwesomeIcon icon={faArrowLeft}/>
+                    <span>{idProduct?.title}</span>
                 </div>
-                <div className="moreDate">
-                    <div className="dates">
-                        <img 
-                            className="productImage"
-                            src={idProduct?.productImgs} 
-                            alt={idProduct?.title} 
-                        />
-                        <h3 className="productDate" >{idProduct?.title}</h3>
-                        <p className="productDate" >Precio <span>{idProduct?.price}</span> </p>
+                <section className="productDetail">
+                    {/* images container */}
+                    <div className="productImages">
+                        <img src={idProduct?.productImgs} alt={idProduct?.title} />
                     </div>
-                    <div className="descriptionProduct">
-                        <h4>Descripción</h4>
-                        <p>{idProduct?.description}</p>
-                        <div className="Counter">
-                            {/* Counter */}
-                            <button className="arrows" onClick={increment} >
-                                <FontAwesomeIcon icon={faArrowRight} />
-                            </button>
-                            <h4> {counter} </h4>
-                            <button className="arrows" onClick={decrement} >
-                                <FontAwesomeIcon icon={faArrowLeft} />
-                            </button>
+                    {/* infomation  container */}
+                    <div className="productData">
+                        <h1>{idProduct?.title}</h1>
+                        <div className="priceAndShoppingCar">
+                            <div className="flexcontainer">
+                                <h3>Precio <span>$ {idProduct?.price}</span> </h3>
+                                <div className="Counter">
+                                    <h3>Quantity</h3>
+                                    <p>
+                                    <button onClick={decrement}><FontAwesomeIcon icon={faMinus}/></button>
+                                    <span>{counter}</span>
+                                    <button onClick={increment}><FontAwesomeIcon icon={faPlus}/></button>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="carBtn">
+                                Add to car  <FontAwesomeIcon icon={faCartShopping}/>
+                            </div>
+                            
+                        </div>
+                        <div className="description">
+                            <p>{idProduct?.description}</p>
                         </div>
                     </div>
-                </div>
+                </section>
                 <hr/>
-                <div className="sameProductsContainer">
+                <section className="sameProductsContainer">
                         {
                             sameProductsByCategory?.map(product => product.id !== idProduct.id && (
                                 <Link className='link' key={product.id} to={`/productInfo/${product.id}`} >
@@ -77,10 +82,24 @@ const ProductInfo = ({ Products }) => {
                                 </Link>
                             ))
                         }
-                </div>
+                </section>
             </div>
         </AnimateComponent>      
     );
 };
 
 export default ProductInfo;
+
+
+
+{/* <div className="flexcontainer">
+    <h3>Precio <span>$ {idProduct?.price}</span> </h3>
+    <div className="Counter">
+        <h3>Quantity</h3>
+        <>
+            <button onClick={decrement}><FontAwesomeIcon icon={faMinus}/></button>
+            <span>{counter}</span>
+            <button onClick={increment}><FontAwesomeIcon icon={faPlus}/></button>
+        <>
+    </div>
+</div> */}

@@ -8,8 +8,7 @@ import SelectCategory from '../components/SelectCategory';
 import SearchProduct from '../components/SearchProduct';
 import AnimateComponent from '../components/AnimateComponent';
 
-
-const ProductsList = ({Products, setProducts}) => {
+const ProductsList = ({ Products, setProducts }) => {
     console.log(Products);
 
     const allProducts = ()=>{
