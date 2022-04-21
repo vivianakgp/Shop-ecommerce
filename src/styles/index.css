@@ -3,8 +3,8 @@
 .productInfo {
   /* background-color: rgb(241, 177, 220); */
 }
-.productInfo .productInfo__subMenu {
-  background-color: rgb(135, 135, 221);
+.productInfo .productInfo__subMenu > span {
+  font-weight: bold;
 }
 .productInfo .productDetail {
   /* background-color: rgb(244, 244, 247); */
@@ -21,50 +21,90 @@
 }
 .productInfo .productDetail .productData {
   margin-top: 32px;
-  background-color: rgb(248, 170, 141);
 }
 .productInfo .productDetail .productData > h1 {
-  font-size: 1.4rem;
-}
-.productInfo .productDetail .productData > .description {
-  background-color: palevioletred;
+  font-size: 1.5rem;
+  color: #515151;
+  margin: 0 0 20px 10px;
 }
 .productInfo .productDetail .productData > .priceAndShoppingCar {
   margin-top: 10px;
-  background-color: rgb(238, 226, 230);
 }
 .productInfo .productDetail .productData > .priceAndShoppingCar .flexcontainer {
   display: flex;
   flex-direction: row;
   margin-bottom: 25px;
-  background: indigo;
 }
 .productInfo .productDetail .productData > .priceAndShoppingCar .flexcontainer > h3 {
   width: 50%;
   font-size: 0.9rem;
-  color: rgb(141, 140, 140);
+  color: rgb(160, 160, 160);
   font-family: "Quicksand", sans-serif;
 }
 .productInfo .productDetail .productData > .priceAndShoppingCar .flexcontainer > h3 > span {
   display: block;
-  color: black;
+  margin-top: 10px;
+  color: #515151;
+  font-size: 1.4rem;
 }
 .productInfo .productDetail .productData > .priceAndShoppingCar .flexcontainer .Counter > h3 {
+  margin-bottom: 10px;
   font-size: 0.9rem;
-  color: rgb(141, 140, 140);
+  color: rgb(160, 160, 160);
   font-family: "Quicksand", sans-serif;
+}
+.productInfo .productDetail .productData > .priceAndShoppingCar .flexcontainer .Counter > .counter__container {
+  border: 0.5px solid rgb(160, 160, 160);
+  overflow: hidden;
+  font-size: 1.1rem;
+}
+.productInfo .productDetail .productData > .priceAndShoppingCar .flexcontainer .Counter > .counter__container > button {
+  color: rgb(160, 160, 160);
+}
+.productInfo .productDetail .productData > .priceAndShoppingCar .flexcontainer .Counter > .counter__container > span {
+  height: 100%;
+  padding: 15px;
+  font-weight: 900;
+  border-left: 0.5px solid rgb(160, 160, 160);
+  border-right: 0.5px solid rgb(160, 160, 160);
 }
 .productInfo .productDetail .productData > .priceAndShoppingCar .carBtn {
   display: block;
   width: 100%;
   color: white;
   padding: 15px;
+  margin-bottom: 50px;
   font-size: 1.1rem;
   text-align: center;
   font-family: "Quicksand", sans-serif;
-  background-color: #0e0c0c;
+  background-color: #F85555;
 }
+.productInfo > h2.section2 {
+  font-size: 1.4rem;
+  margin: 30px 0;
+  color: #F85555;
+  font-weight: 900;
+}
+.productInfo .sameProductsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.productInfo .sameProductsContainer .link {
+  width: 100%;
+  color: black;
+  text-decoration: none;
+}
+
 @media only screen and (min-width: 568px) {
+  .productInfo .sameProductsContainer .link {
+    width: 46%;
+    margin: 0 2%;
+  }
+}
+@media only screen and (min-width: 768px) {
   .productInfo {
     background-color: rgb(240, 66, 182);
   }

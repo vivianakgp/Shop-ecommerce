@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-.ProductsList{
-    /* background-color: rgb(80, 79, 79); */
-}
+
 /* sub menu */
 .subMenu__Container{
     display: flex;
@@ -55,17 +53,17 @@
 }
 .link{
     width: 100%;
-    color: black;
     text-decoration: none;
 }
 .card{
     position: relative;
     padding: 20px 0;
     margin:10px 0;
-    height: 430px;
+    height: 480px;
+    /* height: 430px; */
     border-radius: 8px;
-    border: 1px solid rgb(155, 155, 155);
-    /* background-color: rgb(255, 255, 255); */
+    border: 1px solid #C1C1C1;
+    /* background-color: rgb(163, 155, 155); */
 }
 .card__imgContainer{
     overflow: hidden;
@@ -84,7 +82,6 @@
     width: 100%;
     height: 100%;
     object-fit: contain; 
-  
 }
 .card__imgContainer .over{
     position: absolute;
@@ -95,29 +92,43 @@
 }
 .card__imgContainer .over:hover{
     opacity: 1;
-
 }
-
+hr.breakSec{
+    background: #C1C1C1;
+    height: 0.5px;
+    border-style: none;
+}
 .card__info{
     padding: 25px;
-    font-size: 18px;
-    font-weight: 600;
-
+    font-weight: bold;
 }
 .card__info h3{
-    font-weight: 800;
     font-size: 22px;
-    color: rgb(51, 50, 50);
+    color: #515151;
+    margin: 0 0 15px 5px;
 }
 .card__info p{
-    color: #918d8d;
+    color: #C1C1C1;
+    font-size: 1rem;
+
 }
 .card__info p span{
     display: block;
-    font-weight: 900;
-    color: rgb(51, 50, 50);
+    font-size: 19.2px;
+    color: #515151;
 
-
+}
+.shoppingCar{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 0;
+    background-color: #F85555;
+    border-radius: 50%;
 }
 
 @media only screen and (min-width:568px){
@@ -134,7 +145,7 @@
     .cards__Container{
         max-width: 65%;
         margin: 20px auto;;
-        /* background-color: rgb(0, 183, 255); */
+        background-color: rgb(0, 183, 255);
     }
 
 }

@@ -3,6 +3,9 @@ import axios from 'axios';
 import {Link} from 'react-router-dom'
 import '../styles/ProductList.css';
 import gif404 from '../images/404.gif';
+// fontAwesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 //import components
 import SelectCategory from '../components/SelectCategory';
 import SearchProduct from '../components/SearchProduct';
@@ -17,7 +20,7 @@ const ProductsList = ({ Products, setProducts }) => {
         .then(res => setProducts(res.data.data.products))
     };
     return (
-        <div className="ProductsList">
+        <>
             <div className="subMenu__Container">
                 <button onClick={allProducts}>All</button><hr/>
                 <SelectCategory setProducts={setProducts} /><hr/>
@@ -41,11 +44,11 @@ const ProductsList = ({ Products, setProducts }) => {
                                                 <img className="over" src={Product?.productImgs?.[1]} alt={Product?.title}/>
                                                 <img src={Product?.productImgs?.[2]} alt={Product?.title}/>
                                             </div>
-                                            <hr style={{color:"#918d8d"}}/>
+                                            <hr className="breakSec"/>
                                             <div className="card__info">
                                                 <h3>{Product?.title}</h3>
-                                                <p>Prirce <span> {`$${Product?.price}`} </span> </p>
-                                                {/* <p>Category <span> {`$${Product?.category.name}`} </span> </p> */}
+                                                <p>Price <span> {`$${Product?.price}`} </span> </p>
+                                                <button className="shoppingCar"><FontAwesomeIcon icon={faCartShopping}/></button>
                                             </div>
                                         </div>
                                     </Link>
@@ -56,7 +59,7 @@ const ProductsList = ({ Products, setProducts }) => {
                 </div>
             </AnimateComponent>
 
-        </div>
+        </>
     );
 };
 

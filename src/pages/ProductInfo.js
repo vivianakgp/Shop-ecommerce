@@ -27,9 +27,9 @@ const ProductInfo = ({ Products }) => {
         <AnimateComponent>
             <div className="productInfo" >
                 <div className="productInfo__subMenu">
-                    <Link to={`/`} >Home</Link>
-                    <FontAwesomeIcon icon={faArrowLeft}/>
-                    <span>{idProduct?.title}</span>
+                    <Link to={`/`} style={{textDecoration:"none",marginRight:"5px"}}>Home</Link>
+                    <FontAwesomeIcon style={{marginRight:"5px", color:"#F85555"}} icon={faArrowLeft}/>
+                    <span style={{color:"#515151"}}>{idProduct?.title}</span>
                 </div>
                 <section className="productDetail">
                     {/* images container */}
@@ -38,17 +38,17 @@ const ProductInfo = ({ Products }) => {
                     </div>
                     {/* infomation  container */}
                     <div className="productData">
-                        <h1>{idProduct?.title}</h1>
+                        <h1><strong>{idProduct?.title}</strong></h1>
                         <div className="priceAndShoppingCar">
                             <div className="flexcontainer">
-                                <h3>Precio <span>$ {idProduct?.price}</span> </h3>
+                                <h3>Price <span>$ {idProduct?.price}</span> </h3>
                                 <div className="Counter">
                                     <h3>Quantity</h3>
-                                    <p>
+                                    <div className="counter__container">
                                     <button onClick={decrement}><FontAwesomeIcon icon={faMinus}/></button>
                                     <span>{counter}</span>
                                     <button onClick={increment}><FontAwesomeIcon icon={faPlus}/></button>
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                             <div className="carBtn">
@@ -62,10 +62,11 @@ const ProductInfo = ({ Products }) => {
                     </div>
                 </section>
                 <hr/>
+                <h2 className="section2">Discover similar items</h2>
                 <section className="sameProductsContainer">
                         {
                             sameProductsByCategory?.map(product => product.id !== idProduct.id && (
-                                <Link className='link' key={product.id} to={`/productInfo/${product.id}`} >
+                                <Link className="link" key={product.id} to={`/productInfo/${product.id}`} >
                                     <div className="card">
                                         <div className='card__imgContainer'>
                                             <img 
@@ -73,10 +74,11 @@ const ProductInfo = ({ Products }) => {
                                                 alt={product?.title} 
                                             />
                                         </div>
+                                        <hr className="breakSec"/>
                                         <div className="card__info">
                                             <h3>{product?.title}</h3>
                                             <p>Prirce <span> {`$${product?.price}`} </span> </p>
-                                            {/* <p>Category <span> {`$${product?.category.name}`} </span> </p> */}
+                                            <button className="shoppingCar"><FontAwesomeIcon icon={faCartShopping}/></button>
                                         </div>
                                     </div>
                                 </Link>
