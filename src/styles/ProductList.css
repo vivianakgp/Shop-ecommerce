@@ -145,7 +145,7 @@ hr.breakSec{
     .cards__Container{
         max-width: 65%;
         margin: 20px auto;;
-        background-color: rgb(0, 183, 255);
+        /* background-color: rgb(0, 183, 255); */
     }
 
 }

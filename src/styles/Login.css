@@ -13,7 +13,6 @@
     align-items: center;
     min-width: 320px;
 }
-
 .Login .Form{
     display: flex;
     flex-direction: column;
@@ -22,7 +21,6 @@
     padding: 30px 20px 60px 20px;
     background-color: white;
     border-radius: 8px;
-
 }
 .Form .close{
     font-size: 22px;
@@ -31,7 +29,6 @@
     border-style: none;
     background: transparent;
     transition: all .5s linear;
-
 }
 .Form .close:hover{
     color: black;
@@ -55,22 +52,18 @@
     margin: 20px 0;
     background-color: rgb(253, 235, 235); 
     transition: all .5s linear;
-
 }
 .Form .testDataContainer h3{
     text-align: center;
     font-size: 20px;
     font-weight: 400;
 }
-
 .Form label{
     font-size: 18px;
     color: rgb(54, 53, 54);
     font-weight: 500;
     font-family: 'Quicksand', sans-serif;
-
 }
-
 .Form input{
     height: 40px;
     border-radius: 5px;
@@ -88,8 +81,6 @@
     border-style: none;
     margin-top: 20px;
     background-color: #F85555;
-
-
 }
 @media only screen and (min-width:568px){
     /* .Login .Form{

@@ -12,7 +12,6 @@
     /* width: 50%; */
     height: inherit;
     /* background-color: rgb(73, 71, 71); */
-
 }
 .logo img{
     width: auto;
@@ -25,24 +24,20 @@
     justify-content: baseline;
 }
 .icons span{
-
     font-size: 20px;
-    margin-right: 16px;
+    margin-right: 56px;
     color:rgb(187, 176, 176);
     cursor: pointer;
     transition: all 1s;
     cursor: pointer;
-
     /* padding: 5px;     */
     /* background-color: aliceblue; */
-
 }
 .icons> span:hover{
     color:rgb(88, 88, 88);
     transform: scale(1.2);
     transition: all 1s ease;
 }
-
 @media only screen and (min-width:990px){
 
     .Menu{

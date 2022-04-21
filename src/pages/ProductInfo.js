@@ -28,7 +28,7 @@ const ProductInfo = ({ Products }) => {
             <div className="productInfo" >
                 <div className="productInfo__subMenu">
                     <Link to={`/`} style={{textDecoration:"none",marginRight:"5px"}}>Home</Link>
-                    <FontAwesomeIcon style={{marginRight:"5px", color:"#F85555"}} icon={faArrowLeft}/>
+                    <FontAwesomeIcon style={{marginRight:"8px", color:"#F85555"}} icon={faArrowLeft}/>
                     <span style={{color:"#515151"}}>{idProduct?.title}</span>
                 </div>
                 <section className="productDetail">
@@ -38,7 +38,9 @@ const ProductInfo = ({ Products }) => {
                     </div>
                     {/* infomation  container */}
                     <div className="productData">
-                        <h1><strong>{idProduct?.title}</strong></h1>
+                        <h1>{idProduct?.title}</h1>
+                        {/* test div class media768 */}
+                        <div className="media768">
                         <div className="priceAndShoppingCar">
                             <div className="flexcontainer">
                                 <h3>Price <span>$ {idProduct?.price}</span> </h3>
@@ -54,11 +56,13 @@ const ProductInfo = ({ Products }) => {
                             <div className="carBtn">
                                 Add to car  <FontAwesomeIcon icon={faCartShopping}/>
                             </div>
-                            
                         </div>
                         <div className="description">
                             <p>{idProduct?.description}</p>
                         </div>
+                        {/* test div class media768 */}
+                        </div>
+
                     </div>
                 </section>
                 <hr/>
