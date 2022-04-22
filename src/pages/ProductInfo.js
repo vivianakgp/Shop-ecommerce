@@ -5,6 +5,9 @@ import axios from 'axios';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlus, faMinus, faCartShopping, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import AnimateComponent from '../components/AnimateComponent';
+import { Carousel } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// @import "~bootstrap/scss/bootstrap";
 // import { useDispatch } from 'react-redux';
 // import { updateCartThunk } from '../redux/actions';
 // import '../styles/productsInfo.css';
@@ -27,14 +30,29 @@ const ProductInfo = ({ Products }) => {
         <AnimateComponent>
             <div className="productInfo" >
                 <div className="productInfo__subMenu">
-                    <Link to={`/`} style={{textDecoration:"none",marginRight:"5px"}}>Home</Link>
+                    <Link to={`/`} style={{textDecoration:"none",marginRight:"10px", color:"#a0a0a0"}}>Home</Link>
                     <FontAwesomeIcon style={{marginRight:"8px", color:"#F85555"}} icon={faArrowLeft}/>
                     <span style={{color:"#515151"}}>{idProduct?.title}</span>
                 </div>
                 <section className="productDetail">
                     {/* images container */}
                     <div className="productImages">
-                        <img src={idProduct?.productImgs} alt={idProduct?.title} />
+                    <Carousel>
+                        {
+                            idProduct?.productImgs?.map(item => (
+                                <Carousel.Item className="carouselItem">
+                                    <img
+                                    className="carouselImg"
+                                    // style={{width:"250px", height:"250px"}}
+                                    // className="d-block w-100"style={{height:"100%", width:"100%",objectFit:"contain"}}
+                                    src={item}
+                                    alt={item}
+                                    />
+                                </Carousel.Item>
+                            ))
+                        }
+                        </Carousel>
+                        {/* <img src={idProduct?.productImgs} alt={idProduct?.title} /> */}
                     </div>
                     {/* infomation  container */}
                     <div className="productData">

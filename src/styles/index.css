@@ -10,11 +10,21 @@
 .productInfo .productDetail > div.productImages {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
 }
-.productInfo .productDetail > div.productImages > img {
-  width: 35vh;
-  display: flex;
-  margin-top: 1rem;
+.productInfo .productDetail > div.productImages .carouselItem {
+  width: 250px;
+  height: 250px;
+  background-color: rgb(105, 16, 179);
+}
+.productInfo .productDetail > div.productImages .carouselItem .carouselImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .productInfo .productDetail > div.productData {
   margin-top: 32px;
@@ -22,6 +32,7 @@
 .productInfo .productDetail > div.productData > h1 {
   font-size: 1.5rem;
   color: #515151;
+  font-weight: bold;
   margin: 0 0 20px 10px;
 }
 .productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar {
@@ -35,35 +46,37 @@
 .productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer > h3 {
   width: 50%;
   font-size: 0.9rem;
-  color: rgb(160, 160, 160);
+  color: #a0a0a0;
   font-family: "Quicksand", sans-serif;
 }
 .productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer > h3 > span {
   display: block;
   margin-top: 10px;
   color: #515151;
+  font-weight: bold;
   font-size: 1.4rem;
 }
 .productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer .Counter > h3 {
   margin-bottom: 10px;
   font-size: 0.9rem;
-  color: rgb(160, 160, 160);
+  color: #a0a0a0;
   font-family: "Quicksand", sans-serif;
 }
 .productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer .Counter > .counter__container {
-  border: 0.5px solid rgb(160, 160, 160);
+  border: 0.5px solid #a0a0a0;
   overflow: hidden;
   font-size: 1.1rem;
 }
 .productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer .Counter > .counter__container > button {
-  color: rgb(160, 160, 160);
+  color: #a0a0a0;
+  padding: 5px 10px;
 }
 .productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer .Counter > .counter__container > span {
   height: 100%;
   padding: 15px;
   font-weight: 900;
-  border-left: 0.5px solid rgb(160, 160, 160);
-  border-right: 0.5px solid rgb(160, 160, 160);
+  border-left: 0.5px solid #a0a0a0;
+  border-right: 0.5px solid #a0a0a0;
 }
 .productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .carBtn {
   display: block;
@@ -99,6 +112,24 @@
   .productInfo {
     max-width: 85%;
     margin: 0 auto;
+  }
+  .productInfo .productDetail > div.productImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    overflow: hidden;
+  }
+  .productInfo .productDetail > div.productImages .carouselItem {
+    width: 100%;
+    height: 100%;
+  }
+  .productInfo .productDetail > div.productImages .carouselItem .carouselImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
   .productInfo .sameProductsContainer .link {
     width: 46%;

@@ -25,7 +25,7 @@
 }
 .icons span{
     font-size: 20px;
-    margin-right: 56px;
+    margin-left: 1.5rem;
     color:rgb(187, 176, 176);
     cursor: pointer;
     transition: all 1s;
