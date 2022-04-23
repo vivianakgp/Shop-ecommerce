@@ -22,11 +22,13 @@ const ProductsList = ({ Products, setProducts }) => {
     return (
         <>
             <div className="subMenu__Container">
-                <button onClick={allProducts}>All</button><hr/>
-                <SelectCategory setProducts={setProducts} /><hr/>
+                <button onClick={allProducts}>All</button>
+                <hr className="separate"/>
+                <SelectCategory setProducts={setProducts}/>
+                <hr className="separate"/>
                 <SearchProduct setProducts={setProducts} />
             </div>
-            <hr style={{width:"70%", margin:"20px auto"}}/>
+            <hr className="breack"/>
             <AnimateComponent>
                 <div className="cards__Container">
                     {

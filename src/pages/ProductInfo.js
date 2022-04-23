@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addProductToCartThunk } from '../redux/actions';
+
 import useCounter from '../hooks/useCounter';
 import axios from 'axios';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPlus, faMinus, faCartShopping, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faMinus, faCartShopping, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import AnimateComponent from '../components/AnimateComponent';
-import { Carousel } from 'react-bootstrap';
+import { Carousel }  from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// @import "~bootstrap/scss/bootstrap";
-// import { useDispatch } from 'react-redux';
-// import { updateCartThunk } from '../redux/actions';
-// import '../styles/productsInfo.css';
 
 const ProductInfo = ({ Products }) => {
-
     const { id } = useParams();
     const [ idProduct, setIdProduct ] = useState({});
-    // state Counter
     const { counter, decrement, increment } = useCounter();
-
+    const dispatch = useDispatch();
     useEffect(() => {
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}/`)
             .then(res => setIdProduct(res.data.data.product))
@@ -26,6 +23,14 @@ const ProductInfo = ({ Products }) => {
 
     const currentCategory = idProduct.category;
     const sameProductsByCategory = Products.filter(product => product.category.name === currentCategory);
+    const addProductToCart = ()=> {
+        const product = {
+            id: parseInt(id),
+            quantity: counter
+        }
+        console.log(product)
+        dispatch(addProductToCartThunk(product))
+    }
     return (
         <AnimateComponent>
             <div className="productInfo" >
@@ -39,25 +44,21 @@ const ProductInfo = ({ Products }) => {
                     <div className="productImages">
                     <Carousel>
                         {
-                            idProduct?.productImgs?.map(item => (
-                                <Carousel.Item className="carouselItem">
+                            idProduct?.productImgs?.map(url => (
+                                <Carousel.Item className="carouselItem" key={url}>
                                     <img
                                     className="carouselImg"
-                                    // style={{width:"250px", height:"250px"}}
-                                    // className="d-block w-100"style={{height:"100%", width:"100%",objectFit:"contain"}}
-                                    src={item}
-                                    alt={item}
+                                    src={url}
+                                    alt={url}
                                     />
                                 </Carousel.Item>
                             ))
                         }
                         </Carousel>
-                        {/* <img src={idProduct?.productImgs} alt={idProduct?.title} /> */}
                     </div>
                     {/* infomation  container */}
                     <div className="productData">
                         <h1>{idProduct?.title}</h1>
-                        {/* test div class media768 */}
                         <div className="media768">
                         <div className="priceAndShoppingCar">
                             <div className="flexcontainer">
@@ -71,14 +72,13 @@ const ProductInfo = ({ Products }) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="carBtn">
+                            <div className="carBtn" onClick={addProductToCart}>
                                 Add to car  <FontAwesomeIcon icon={faCartShopping}/>
                             </div>
                         </div>
                         <div className="description">
                             <p>{idProduct?.description}</p>
                         </div>
-                        {/* test div class media768 */}
                         </div>
 
                     </div>
@@ -113,17 +113,3 @@ const ProductInfo = ({ Products }) => {
 };
 
 export default ProductInfo;
-
-
-
-{/* <div className="flexcontainer">
-    <h3>Precio <span>$ {idProduct?.price}</span> </h3>
-    <div className="Counter">
-        <h3>Quantity</h3>
-        <>
-            <button onClick={decrement}><FontAwesomeIcon icon={faMinus}/></button>
-            <span>{counter}</span>
-            <button onClick={increment}><FontAwesomeIcon icon={faPlus}/></button>
-        <>
-    </div>
-</div> */}

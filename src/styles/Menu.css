@@ -11,27 +11,22 @@
 .logo{
     /* width: 50%; */
     height: inherit;
-    /* background-color: rgb(73, 71, 71); */
 }
 .logo img{
     width: auto;
     height: 100%;
 }
 .icons{
-    /* width: 50%; */
-    /* background-color: rgb(243, 114, 226); */
     display: flex;
     justify-content: baseline;
 }
 .icons span{
     font-size: 20px;
-    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     color:rgb(187, 176, 176);
     cursor: pointer;
     transition: all 1s;
     cursor: pointer;
-    /* padding: 5px;     */
-    /* background-color: aliceblue; */
 }
 .icons> span:hover{
     color:rgb(88, 88, 88);
@@ -39,14 +34,12 @@
     transition: all 1s ease;
 }
 @media only screen and (min-width:990px){
-
     .Menu{
         position: relative;
         max-width: 75%;
         height: 80px;
         margin:  5rem auto;
         justify-content: center;
-        /* background-color: rgb(255, 0, 128); */
     }
     .icons{
         position: absolute;
