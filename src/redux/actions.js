@@ -50,11 +50,7 @@ export const deletCartThunk = id =>{
 
 export const updateCartThunk = () => {
     return dispatch => {
-<<<<<<< HEAD
         return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/purchases/`, getConfig())
-=======
-        return axios.post(`${URL}/purchases`, {}, getConfig())
->>>>>>> 0c4df3ce21be526a70fc446d5182bdc65e59f56b
             .then( () => dispatch(getCartThunk()) )
     }
 }
