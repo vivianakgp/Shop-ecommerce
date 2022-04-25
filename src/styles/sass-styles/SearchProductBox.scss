@@ -1,25 +1,26 @@
 @use 'ProductInfo';
-$search-time: 800ms;
-$reset-time: 150ms;
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
+$search-time: 800ms;
+$reset-time: 150ms;
+
 .searchContainer{
-    // background-color: rgb(136, 255, 0);
     margin: 0 8px;
-	    .search-box {
-        border: solid 2px rgb(116, 117, 115);
+	.search-box {
+        // border: solid 2px rgb(116, 117, 115);
         display: inline-block;
         position: relative;
         border-radius: 50px;
         input[type="text"] {
 			font-family: 'Quicksand', sans-serif;
             font-size: 1rem;
-            width: 20px;
-            height: 20px;
-			padding-left: 18px;
+            width: 25px;
+            height: 25px;
+			padding-left: 20px;
             border: none;
             box-sizing: border-box;
             border-radius: 50px;
+			border: solid 2px #a0a0a0;
             transition: width $search-time cubic-bezier(0.68, -0.55, 0.27, 1.55) $reset-time;
 		&:focus {
 			outline: none;
@@ -31,7 +32,7 @@ $reset-time: 150ms;
 			+ button[type="reset"] {
 				// background-color: aqua;
 				bottom: 10px;
-				right: 0px;
+				right: 2px;
 				transition:
 					bottom $reset-time ease-out $search-time
 				, right $reset-time ease-out $search-time;
@@ -59,13 +60,13 @@ $reset-time: 150ms;
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		bottom: -9px;
-		right: -20px;
+		bottom: -5px;
+		right: -10px;
 		transition: bottom $reset-time ease-out $reset-time, right $reset-time ease-out $reset-time;
 		&:before, &:after {
 			content: "";
 			height: 15px;
-			border-left: solid 2px  rgb(116, 117, 115);
+			border-left: solid 2px  #a0a0a0;
 			position: absolute;
 			transform: rotate(-45deg);
 		}
@@ -73,7 +74,7 @@ $reset-time: 150ms;
 			transform: rotate(45deg);
 			opacity: 0;
 			left: 5px;
-			bottom: -10px;//esta no sirve,cuscar que
+			bottom: -10px;
 			transition:
 				top $reset-time ease-out
 			, right $reset-time ease-out
