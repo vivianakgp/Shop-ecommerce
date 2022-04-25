@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// , { useState }
 import '../styles/Menu.css';
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,7 +17,7 @@ const Menu = () => {
     // Login State
     const [ isLoginOpen, setIsLoginOpen ] = useState(false);
     // Car State
-    const [ isCarOpen, setisCarOpen ] = useState(false);
+    const [ isCarOpen, setisCarOpen ] = useState(true);
 
     const openCart = () => {
         setisCarOpen(!isCarOpen)
@@ -33,13 +32,15 @@ const Menu = () => {
                 <span onClick={()=> setIsLoginOpen(true)}>
                     <FontAwesomeIcon icon={faUser}/>
                 </span>
-                <span><FontAwesomeIcon icon={faCartShopping} onClick={ openCart } /></span>
+                <span>
+                    <FontAwesomeIcon icon={faCartShopping} onClick={ openCart } />
+                </span>
                 {
                     isLoginOpen&&
                     <Login setIsLoginOpen={setIsLoginOpen}  />
                 }
             </div>
-            <MenuCar isCarOpen={isCarOpen} />
+            <MenuCar isCarOpen={isCarOpen} setisCarOpen={setisCarOpen} />
         </div>
     );
 };
