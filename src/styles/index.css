@@ -1,9 +1,188 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+.productInfo .productInfo__subMenu > span {
+  font-weight: bold;
+}
+.productInfo .productDetail {
+  margin: 28px 0;
+}
+.productInfo .productDetail > div.productImages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  overflow: hidden;
+}
+.productInfo .productDetail > div.productImages .carouselItem {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(215, 215, 215, 0.858);
+}
+.productInfo .productDetail > div.productImages .carouselItem .carouselImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.productInfo .productDetail > div.productData {
+  margin-top: 32px;
+}
+.productInfo .productDetail > div.productData > h1 {
+  font-size: 1.5rem;
+  color: #515151;
+  font-weight: bold;
+  margin: 0 0 20px 10px;
+}
+.productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar {
+  margin-top: 10px;
+}
+.productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+}
+.productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer > h3 {
+  width: 50%;
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  font-family: "Quicksand", sans-serif;
+}
+.productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer > h3 > span {
+  display: block;
+  margin-top: 10px;
+  color: #515151;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer .Counter > h3 {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  font-family: "Quicksand", sans-serif;
+}
+.productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer .Counter > .counter__container {
+  border: 0.5px solid #a0a0a0;
+  overflow: hidden;
+  font-size: 1.1rem;
+}
+.productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer .Counter > .counter__container > button {
+  color: #a0a0a0;
+  padding: 5px 10px;
+  border-style: none;
+  background-color: transparent;
+}
+.productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .flexcontainer .Counter > .counter__container > span {
+  height: 100%;
+  padding: 15px;
+  font-weight: 900;
+  border-left: 0.5px solid #a0a0a0;
+  border-right: 0.5px solid #a0a0a0;
+}
+.productInfo .productDetail > div.productData > div.media768 .priceAndShoppingCar .carBtn {
+  display: block;
+  width: 100%;
+  color: white;
+  padding: 15px;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  background-color: #F85555;
+}
+.productInfo > h2.section2 {
+  font-size: 1.4rem;
+  margin: 30px 0;
+  color: #F85555;
+  font-weight: 900;
+}
+.productInfo .sameProductsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.productInfo .sameProductsContainer .link {
+  width: 100%;
+  color: black;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 568px) {
+  .productInfo {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+  .productInfo .productDetail > div.productImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    overflow: hidden;
+  }
+  .productInfo .productDetail > div.productImages .carouselItem {
+    width: 350px;
+    height: 350px;
+  }
+  .productInfo .productDetail > div.productImages .carouselItem .carouselImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .productInfo .sameProductsContainer .link {
+    width: 46%;
+    margin: 0 2%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .productInfo {
+    margin: 0;
+    max-width: 100%;
+  }
+  .productInfo .productDetail {
+    display: flex;
+    flex-direction: row;
+  }
+  .productInfo .productDetail .productImages {
+    width: 50%;
+  }
+  .productInfo .productDetail > div.productData {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .productInfo .productDetail > div.productData > h1 {
+    margin: 0 0 20px 0px;
+  }
+  .productInfo .productDetail > div.productData > div.media768 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .productInfo .productDetail > div.productData > div.media768 > div.description {
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (min-width: 990px) {
+  .productInfo {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+  .productInfo > h2.section2 {
+    text-align: center;
+  }
+  .productInfo > section.sameProductsContainer {
+    max-width: 90%;
+    padding: 0 10%;
+    margin: 0 auto;
+  }
+}
 .searchContainer {
   margin: 0 8px;
 }
 .searchContainer .search-box {
-  border: solid 2px rgb(116, 117, 115);
   display: inline-block;
   position: relative;
   border-radius: 50px;
@@ -11,12 +190,13 @@
 .searchContainer .search-box input[type=text] {
   font-family: "Quicksand", sans-serif;
   font-size: 1rem;
-  width: 20px;
-  height: 20px;
-  padding-left: 18px;
+  width: 25px;
+  height: 25px;
+  padding-left: 20px;
   border: none;
   box-sizing: border-box;
   border-radius: 50px;
+  border: solid 2px #a0a0a0;
   transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
 }
 .searchContainer .search-box input[type=text]:focus {
@@ -29,7 +209,7 @@
 }
 .searchContainer .search-box input[type=text]:focus + button[type=reset], .searchContainer .search-box input[type=text]:not(:placeholder-shown) + button[type=reset] {
   bottom: 10px;
-  right: 0px;
+  right: 2px;
   transition: bottom 150ms ease-out 800ms, right 150ms ease-out 800ms;
 }
 .searchContainer .search-box input[type=text]:focus + button[type=reset]:after, .searchContainer .search-box input[type=text]:not(:placeholder-shown) + button[type=reset]:after {
@@ -49,14 +229,14 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: -9px;
-  right: -20px;
+  bottom: -5px;
+  right: -10px;
   transition: bottom 150ms ease-out 150ms, right 150ms ease-out 150ms;
 }
 .searchContainer .search-box button[type=reset]:before, .searchContainer .search-box button[type=reset]:after {
   content: "";
   height: 15px;
-  border-left: solid 2px rgb(116, 117, 115);
+  border-left: solid 2px #a0a0a0;
   position: absolute;
   transform: rotate(-45deg);
 }

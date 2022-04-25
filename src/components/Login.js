@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '../redux/actions';
-import swal from '@sweetalert/with-react';
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
-
+// external libraries
+import { motion } from 'framer-motion';
+import swal from '@sweetalert/with-react';
 
 import '../styles/Login.css';
-import user from '../images/user1.png'
+import user from '../images/user1.png';
 
 
-const Login = ({setIsLoginOpen}) => {
+const Login = ({ setIsLoginOpen }) => {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const dispatch = useDispatch();
@@ -26,27 +27,47 @@ const Login = ({setIsLoginOpen}) => {
         swal({
             title: "Successful Login!",
             icon: "success",
-            // button: "Aww yiss!",
             buttons: false,
             timer: 3000,
         });
-
-    }
+    };
     const login = e =>{
-        e.preventDefault()
-        console.log({email, password})
+        e.preventDefault();
+        // console.log({email, password})
         const credentials = {email, password}
         dispatch(loginThunk(credentials))
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             localStorage.setItem('token', res.data.data.token)
-        })
+        })  
         .then(()=>closeModal())
         .then(()=>successLoginModal())
     };
+    // animation obj
+    const dropIn = {
+        hidden: { y: "-100vh", opacity: 0,},
+        visible: { 
+            y: "0", 
+            opacity: 1,
+            transition: {
+                duration: 0.1,
+                type: "spring",
+                damping: 25,
+                stiffness: 500,
+            },
+        },
+        exit: { y: "100vh", opacity: 0 },
+    };
     return (
         <div className="Login">
-            <form className="Form" onSubmit={login}>
+            <motion.form 
+            className="Form" 
+            onSubmit={login} 
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            >
                 <button className="close"
                 onClick={()=>setIsLoginOpen(false)}>
                     <FontAwesomeIcon icon={faXmark}/>
@@ -68,7 +89,7 @@ const Login = ({setIsLoginOpen}) => {
                 value={password} onChange={e => setPassword(e.target.value)}  
                 />
                 <button className="loginBtn">Login</button>
-            </form>
+            </motion.form>
         </div>
     )
 };

@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-.ProductsList{
-    /* background-color: rgb(80, 79, 79); */
+.breack{
+    width: 70%;
+    height: 2px;
+    margin: 20px auto;
+}
+.separate{
+    width: 25px;
+    transform: rotate(60deg);
 }
 /* sub menu */
 .subMenu__Container{
@@ -12,22 +18,15 @@
     width: auto;
     height: 40px;
     padding: 5px 0;
-    /* background-color: rgb(230, 208, 179); */
 }
 .subMenu__Container > button{
     margin: 0 8px;
     font-size: 1.3rem;
     font-family: 'Quicksand', sans-serif;
+    color: #515151;
     border-style: none;
-    background-color: transparent;
-
+    background: transparent;
 }
-.subMenu__Container hr{
-    height: 100%;
-    transform: rotate(20deg);
-
-}
-
 /* list of cproducts */
 .productsNotFound{
     display: flex;
@@ -51,26 +50,23 @@
     justify-content: center; 
     align-items: center;
     margin-top: 20px;
-    /* background-color: rgb(165, 233, 233); */
 }
 .link{
     width: 100%;
-    color: black;
     text-decoration: none;
 }
 .card{
     position: relative;
+    overflow: hidden;
     padding: 20px 0;
     margin:10px 0;
-    height: 430px;
+    height: 480px;
     border-radius: 8px;
-    border: 1px solid rgb(155, 155, 155);
-    /* background-color: rgb(255, 255, 255); */
+    border: 1px solid #C1C1C1;
 }
 .card__imgContainer{
     overflow: hidden;
     position: relative;
-    /* width: 100%; error*/
     width: 250px;
     height: 250px;
     margin: auto;
@@ -78,55 +74,67 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    /* background-color: rgba(0, 0, 0, 0.267); */
 }
 .card__imgContainer img {
     width: 100%;
     height: 100%;
     object-fit: contain; 
-  
 }
 .card__imgContainer .over{
     position: absolute;
     opacity: 0;
     background-color: white;
     transition: all 300ms ease-in;
-
 }
 .card__imgContainer .over:hover{
     opacity: 1;
-
 }
-
+.card > hr.breakSec{
+    background: #C1C1C1;
+    height: 0.5px;
+    border-style: none;
+}
 .card__info{
     padding: 25px;
-    font-size: 18px;
-    font-weight: 600;
-
+    font-weight: bold;
 }
 .card__info h3{
-    font-weight: 800;
     font-size: 22px;
-    color: rgb(51, 50, 50);
+    color: #515151;
+    font-weight: bold;
+    margin: 0 0 15px 5px;
 }
 .card__info p{
-    color: #918d8d;
+    color: #C1C1C1;
+    font-size: 1rem;
+
 }
 .card__info p span{
     display: block;
-    font-weight: 900;
-    color: rgb(51, 50, 50);
-
-
+    font-size: 19.2px;
+    color: #515151;
+}
+.card__info >.shoppingCar{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 0;
+    background-color: #F85555;
+    border-radius: 50%;
+    border-style: none;
 }
 
 @media only screen and (min-width:568px){
     .cards__Container{
-        /* background-color: rgb(217, 255, 0); */
+        /* background-color: rgb(244, 169, 246); */
     }
     .link{
         width: 46%;
-        margin: 0 2%;
+        margin: 0 1%;
     }
 }
 @media only screen and (min-width:990px){
@@ -134,7 +142,6 @@
     .cards__Container{
         max-width: 65%;
         margin: 20px auto;;
-        /* background-color: rgb(0, 183, 255); */
     }
 
 }

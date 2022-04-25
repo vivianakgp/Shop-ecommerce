@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../styles/SelectCategory.css';
 
 
-const SelectBox = ({setProducts}) => {
+const SelectBox = ({ setProducts }) => {
     const [ categories, setCategories ] = useState([]);
     useEffect(() => {
         axios.get('https://ecommerce-api-react.herokuapp.com/api/v1/products/categories')
