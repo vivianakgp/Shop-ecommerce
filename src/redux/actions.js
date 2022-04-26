@@ -21,7 +21,7 @@ export const addProductToCartThunk = product => {
     return () => {
         return axios.post(`${URL}/cart`, product , getConfig())
         .then(()=> console.log(`added ${product.quantity} product with id: ${product.id}`))
-        .catch(()=>console.log(localStorage.getItem('token')))
+        .catch( err => console.log(err))
         
     }
 };
