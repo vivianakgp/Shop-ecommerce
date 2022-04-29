@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../styles/ProductList.css';
 import gif404 from '../images/404.gif';
 // fontAwesome
@@ -13,7 +13,6 @@ import AnimateComponent from '../components/AnimateComponent';
 
 const ProductsList = ({ Products, setProducts }) => {
     console.log(Products);
-
     const allProducts = ()=>{
         console.log('all products')
         axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products`)
@@ -50,7 +49,10 @@ const ProductsList = ({ Products, setProducts }) => {
                                             <div className="card__info">
                                                 <h3>{Product?.title}</h3>
                                                 <p>Price <span> {`$${Product?.price}`} </span> </p>
-                                                <button className="shoppingCar"><FontAwesomeIcon icon={faCartShopping}/></button>
+                                                {localStorage.getItem('token')?(
+                                                    <button className="shoppingCar"><FontAwesomeIcon icon={faCartShopping}/></button>
+                                                ):''
+                                                }
                                             </div>
                                         </div>
                                     </Link>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addProductToCartThunk } from '../redux/actions';
-
 import useCounter from '../hooks/useCounter';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const ProductInfo = ({ Products }) => {
     const { id } = useParams();
     const [ idProduct, setIdProduct ] = useState({});
+    const [ errLoginBefore, setErrLoginBefore ] = useState('');
     const { counter, decrement, increment } = useCounter();
     const dispatch = useDispatch();
     useEffect(() => {
@@ -29,7 +29,17 @@ const ProductInfo = ({ Products }) => {
             quantity: counter
         }
         console.log(product)
-        dispatch(addProductToCartThunk(product))
+        if(localStorage.getItem('token')){
+            dispatch(addProductToCartThunk(product))
+            console.log('dispatch add to cart fn')
+        } else {
+            setErrLoginBefore('Please login to add to cart')
+            setTimeout(() => {
+                setErrLoginBefore('')
+            },4000)
+            console.log('login')
+        }
+
     }
     return (
         <AnimateComponent>
@@ -72,6 +82,7 @@ const ProductInfo = ({ Products }) => {
                                     </div>
                                 </div>
                             </div>
+                            <p style={{width:"100%",textAlign:"center",color:"#F85555",height:"22px"}}>{errLoginBefore}</p>
                             <div className="carBtn" onClick={addProductToCart}>
                                 Add to car  <FontAwesomeIcon icon={faCartShopping}/>
                             </div>
@@ -100,7 +111,11 @@ const ProductInfo = ({ Products }) => {
                                         <div className="card__info">
                                             <h3>{product?.title}</h3>
                                             <p>Prirce <span> {`$${product?.price}`} </span> </p>
-                                            <button className="shoppingCar"><FontAwesomeIcon icon={faCartShopping}/></button>
+                                            {
+                                                localStorage.getItem('token')?(
+                                                <button className="shoppingCar"><FontAwesomeIcon icon={faCartShopping}/></button>
+                                                ):''
+                                            }
                                         </div>
                                     </div>
                                 </Link>
