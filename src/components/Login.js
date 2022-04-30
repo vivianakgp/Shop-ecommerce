@@ -24,6 +24,15 @@ const Login = ({ setIsLoginOpen }) => {
         setEmail('')
         setPassword('')
     };
+    const logOut = () => {
+        localStorage.setItem('token', '');
+        closeModal();
+        swal({
+            icon: "success",
+            buttons: false,
+            timer: 2000,
+        });
+    };
     const successLoginModal = () => {
         swal({
             title: "Successful Login!",
@@ -46,8 +55,10 @@ const Login = ({ setIsLoginOpen }) => {
             setLoginError('');
         })
         .then(()=>successLoginModal())
-        .catch(err => setLoginError(err.response.data.detail))
-        // err.response.data.detail
+        .catch(() => {
+            setLoginError('Email or password are invalid!')
+        })
+        // .catch(err => setLoginError(err.response.data.detail))
     };
     // animation obj
     const dropIn = {
@@ -81,7 +92,7 @@ const Login = ({ setIsLoginOpen }) => {
                 <div className="imgContainer"><img src={user} alt="userProfile"/></div>
                 {
                     localStorage.getItem('token')?(
-                        <button onClick={()=> localStorage.setItem('token', '')}>log out</button>
+                        <button className="btnLogOut" onClick={logOut}>Log out</button>
                     ):(
                         <>
                         <span className="testDataContainer">
@@ -100,11 +111,10 @@ const Login = ({ setIsLoginOpen }) => {
                         value={password} onChange={e => setPassword(e.target.value)}  
                         />
                         <button className="loginBtn">Login</button>
-                        <p>{loginError}</p>
+                        <p style={{color:"#F85555",textAlign:"center"}}>{loginError}</p>
                         </>
                     )
                 }
-
             </motion.form>
         </div>
     )

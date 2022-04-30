@@ -49,6 +49,16 @@
     width: auto;
     height: 100%;
 }
+.Form .btnLogOut{
+    min-height: 40px;
+    border-radius: 5px;
+    color:white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    border-style: none;
+    margin-top: 20px;
+    background-color: #F85555;
+}
 .Form .testDataContainer{
     border-radius: 8px;
     padding: 10px;
