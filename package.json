@@ -2,7 +2,11 @@
   "name": "shop-ecommerce",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "homepage": "http://vivianakgp.github.io/Shop-ecommerce",
+=======
+  "homepage": "http://axelwdf.github.io/E-commerce",
+>>>>>>> 1ba7993e1cc352011756ee85f54400e18a64bde7
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
