@@ -10,7 +10,7 @@ const MenuCar = ( {isCarOpen, setisCarOpen} ) => {
     const productCarts = useSelector(state => state.productsCart);
     const { counter } = useCounter();
     const dispatch = useDispatch();
-
+    console.log(productCarts)
     return (
         <div className={`CarModal ${isCarOpen ? 'open' : '' }`} >
             <FontAwesomeIcon 
@@ -18,24 +18,21 @@ const MenuCar = ( {isCarOpen, setisCarOpen} ) => {
             icon={faXmark} 
             onClick={()=> setisCarOpen(false)}
             />
-            <h3 className="car-title">Carro de compras</h3>
+            <h3 className="car-title">Shopping Cart</h3>
             {
                 productCarts.map(productCart => (
                     <div className="dataCart" key={productCart.id} >
                         <div className="dataCart-ch">
-                            <p> {productCart?.brand} </p>
                             <b>
                                 <p> {productCart?.title} </p>
                             </b>
-                            <p>${productCart?.price}</p>
-                            <p> {productCart.productsInCart?.quantity} </p>
-                            <div className="Counter">
-                                <p> {counter} </p>
-                            </div>
-                            <button onClick={ () => dispatch(deletCartThunk(productCart.id)) } >
-                                <FontAwesomeIcon icon={faBucket} />
-                            </button>
+                            <p><span>Brand:</span><b>{productCart?.brand}</b> </p>
+                            <p><span>Price:</span><b>${productCart?.price}</b> </p>
+                            <p><span>Quantity:</span> <b>{productCart.productsInCart?.quantity}</b> </p>
                         </div>
+                        <button className="btnDelete" onClick={ () => dispatch(deletCartThunk(productCart.id)) } >
+                            <FontAwesomeIcon icon={faBucket} />
+                        </button>
                     </div>
                 )) 
             }

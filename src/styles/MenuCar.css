@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+/* font-family: 'Quicksand', sans-serif; */
+
 .CarModal {
     position: fixed;
     z-index: 100;
@@ -5,10 +8,11 @@
     bottom: 0;
     right: 0;
     width: 300px;
-    padding: 18px;
+    padding: 18px 18px 28px 18px;
     transform: translateX(300px);
     transition: all 0.5s linear;
-    /* overflow: auto; */
+    overflow: auto;
+    color: rgb(88, 88, 88);
     background: #fff;
     /* background-color: rgb(167, 109, 212); */
     box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
@@ -32,3 +36,58 @@
     background-color: #F85555;
     color: #fff;
 }
+.car-title{
+    font-size: 25px;
+    font-weight: 600;
+    margin:38px 0 30px 0;
+}
+.dataCart{
+    position: relative;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #cecece;
+    transition: .5s;
+
+    /* background-color: #f8e8e8; */
+}
+.dataCart:hover{
+    transform: scale(.9);
+}
+.dataCart-ch{
+    border-radius: 8px 8px 0 0;
+    padding: 5px 8px 0 8px;
+    /* background-color: #fff; */
+
+
+}
+.dataCart-ch > b{
+    font-size: 20px;
+
+}
+.dataCart-ch span{
+    font-size:16px;
+    color:#C1C1C1;
+    font-weight: 500;
+    margin-right: 3px;
+}
+.dataCart-ch >p{
+    font-size:18px;
+}
+.btnDelete{
+    position: absolute;
+    right: 18px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-style: none;
+    cursor: pointer;
+    font-size: 22px;
+    text-align: center;
+    color: #FFF;
+    background-color: #F85555;
+    transition: .5s;
+
+}
+

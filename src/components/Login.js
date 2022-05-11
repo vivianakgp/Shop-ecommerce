@@ -17,11 +17,21 @@ import user from '../images/user1.png';
 const Login = ({ setIsLoginOpen }) => {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
+    const [ loginError, setLoginError ] =useState('');
     const dispatch = useDispatch();
     const closeModal = () => {
         setIsLoginOpen(false)
         setEmail('')
         setPassword('')
+    };
+    const logOut = () => {
+        localStorage.setItem('token', '');
+        closeModal();
+        swal({
+            icon: "success",
+            buttons: false,
+            timer: 2000,
+        });
     };
     const successLoginModal = () => {
         swal({
@@ -40,8 +50,15 @@ const Login = ({ setIsLoginOpen }) => {
             // console.log(res.data);
             localStorage.setItem('token', res.data.data.token)
         })  
-        .then(()=>closeModal())
+        .then(()=> { 
+            closeModal();
+            setLoginError('');
+        })
         .then(()=>successLoginModal())
+        .catch(() => {
+            setLoginError('Email or password are invalid!')
+        })
+        // .catch(err => setLoginError(err.response.data.detail))
     };
     // animation obj
     const dropIn = {
@@ -73,22 +90,31 @@ const Login = ({ setIsLoginOpen }) => {
                     <FontAwesomeIcon icon={faXmark}/>
                 </button>
                 <div className="imgContainer"><img src={user} alt="userProfile"/></div>
-                <span className="testDataContainer">
-                    <h3>Test Data</h3>
-                    <p><FontAwesomeIcon icon={faEnvelope}/> john@gmail.com</p>
-                    <p><FontAwesomeIcon icon={faLock}/> john1234</p>
-                </span>
-                <label htmlForm="email">Email</label>
-                <input type="email"
-                id="email"
-                value={email} onChange={e => setEmail(e.target.value)}
-                />
-                <label htmlForm="pass">Password</label>
-                <input type="password"
-                id="pass"
-                value={password} onChange={e => setPassword(e.target.value)}  
-                />
-                <button className="loginBtn">Login</button>
+                {
+                    localStorage.getItem('token')?(
+                        <button className="btnLogOut" onClick={logOut}>Log out</button>
+                    ):(
+                        <>
+                        <span className="testDataContainer">
+                        <h3>Test Data</h3>
+                        <p><FontAwesomeIcon icon={faEnvelope}/> john@gmail.com</p>
+                        <p><FontAwesomeIcon icon={faLock}/> john1234</p>
+                        </span>
+                        <label htmlForm="email">Email</label>
+                        <input type="email"
+                        id="email"
+                        value={email} onChange={e => setEmail(e.target.value)}
+                        />
+                        <label htmlForm="pass">Password</label>
+                        <input type="password"
+                        id="pass"
+                        value={password} onChange={e => setPassword(e.target.value)}  
+                        />
+                        <button className="loginBtn">Login</button>
+                        <p style={{color:"#F85555",textAlign:"center"}}>{loginError}</p>
+                        </>
+                    )
+                }
             </motion.form>
         </div>
     )

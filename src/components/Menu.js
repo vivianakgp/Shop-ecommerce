@@ -17,7 +17,7 @@ const Menu = () => {
     // Login State
     const [ isLoginOpen, setIsLoginOpen ] = useState(false);
     // Car State
-    const [ isCarOpen, setisCarOpen ] = useState(true);
+    const [ isCarOpen, setisCarOpen ] = useState(false);
 
     const openCart = () => {
         setisCarOpen(!isCarOpen)
