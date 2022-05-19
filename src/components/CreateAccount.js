@@ -11,7 +11,7 @@ const CreateAccount = ({ setIsModalUserOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
-  const [createAcountError, setCreateAcountError] = useState("");
+  const [createAccountError, setCreateAccountError] = useState("");
 
   const dispatch = useDispatch();
   const closeModal = () => {
@@ -50,7 +50,7 @@ const CreateAccount = ({ setIsModalUserOpen }) => {
       .then(() => successCreateAccountModal())
       .catch((err) => {
         console.log(err);
-        setCreateAcountError("Error");
+        setCreateAccountError("Error");
       });
   };
   return (
@@ -92,7 +92,7 @@ const CreateAccount = ({ setIsModalUserOpen }) => {
       />
       <button className="formBtn">Create Account</button>
       <p style={{ color: "#F85555", textAlign: "center" }}>
-        {createAcountError}
+        {createAccountError}
       </p>
     </form>
   );
