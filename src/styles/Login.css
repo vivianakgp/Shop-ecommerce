@@ -1,20 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-.Login{
-    background-color: rgba(16, 15, 17, 0.589);
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    /* padding:20px 0 20px 0; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-width: 320px;
-}
-.Login .Form{
+.form{
     display: flex;
     flex-direction: column;
     min-width: 300px;
@@ -24,42 +8,8 @@
     background-color: white;
     border-radius: 8px;
     max-height: 85vh;
-    overflow: auto;
 }
-.Form .close{
-    font-size: 22px;
-    align-self: flex-end;
-    color:rgb(187, 176, 176);
-    border-style: none;
-    background: transparent;
-    transition: all .5s linear;
-}
-.Form .close:hover{
-    color: black;
-    border-color: black;
-    transform: scale(1.1);
-    transition: all .5s linear;
-}
-.Form .imgContainer{
-    height: 100px;
-    text-align: center;
-    /* background: blueviolet; */
-}
-.imgContainer img{
-    width: auto;
-    height: 100%;
-}
-.Form .btnLogOut{
-    min-height: 40px;
-    border-radius: 5px;
-    color:white;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 18px;
-    border-style: none;
-    margin-top: 20px;
-    background-color: #F85555;
-}
-.Form .testDataContainer{
+.form .testDataContainer{
     border-radius: 8px;
     padding: 10px;
     width: 100%;
@@ -68,18 +18,18 @@
     background-color: rgb(253, 235, 235); 
     transition: all .5s linear;
 }
-.Form .testDataContainer h3{
+.form .testDataContainer h3{
     text-align: center;
     font-size: 1.2rem;
     font-weight: 400;
 }
-.Form label{
+.form label{
     font-size: 18px;
     color: rgb(54, 53, 54);
     font-weight: 500;
     font-family: 'Quicksand', sans-serif;
 }
-.Form input{
+.form input{
     min-height: 40px;
     border-radius: 5px;
     outline: none;
@@ -87,7 +37,8 @@
     padding-left: 10px;
     border: .5px rgb(187, 176, 176) solid;
 }
-.Form .loginBtn{
+
+.form  .formBtn{
     min-height: 40px;
     border-radius: 5px;
     color:white;
@@ -96,12 +47,4 @@
     border-style: none;
     margin-top: 20px;
     background-color: #F85555;
-}
-@media only screen and (min-width:568px){
-    /* .Login .Form{
-        max-width: 350px;
-        padding: 30px 30px 70px 30px;
-
-    } */
-
 }

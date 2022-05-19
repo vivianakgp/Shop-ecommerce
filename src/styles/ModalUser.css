@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+.modalUser{
+    background-color: rgba(16, 15, 17, 0.589);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    /* padding:20px 0 20px 0; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+}
+.modalUser .mainContainer{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 20px 0 20px 0;
+    padding: 30px 20px ;
+    background-color: white;
+    border-radius: 8px;
+    max-height: 85vh;
+    overflow: auto;
+}
+.mainContainer .close{
+    font-size: 22px;
+    align-self: flex-end;
+    color:rgb(187, 176, 176);
+    border-style: none;
+    background: transparent;
+    transition: all .5s linear;
+}
+.mainContainer .close:hover{
+    color: black;
+    border-color: black;
+    transform: scale(1.1);
+    transition: all .5s linear;
+}
+.mainContainer .imgContainer{
+    height: 100px;
+    text-align: center;
+    /* background: blueviolet; */
+}
+.imgContainer img{
+    width: auto;
+    height: 100%;
+}
+
+
+@media only screen and (min-width:568px){
+    /* .Login .Form{
+        max-width: 350px;
+        padding: 30px 30px 70px 30px;
+
+    } */
+
+}
