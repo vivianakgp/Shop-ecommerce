@@ -24,12 +24,7 @@ export const createAccountThunk = (newUser) => {
 export const addProductToCartThunk = (product) => {
   //return a fn
   return () => {
-    return axios
-      .post(`${URL}/cart`, product, getConfig())
-      .then(() =>
-        console.log(`added ${product.quantity} product with id: ${product.id}`)
-      )
-      .catch((err) => console.log(`no se agrego al carrito${err}`));
+    return axios.post(`${URL}/cart`, product, getConfig());
   };
 };
 export const setProductsCart = (productsCart) => ({

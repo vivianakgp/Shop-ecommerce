@@ -49,7 +49,7 @@ const CreateAccount = ({ setIsModalUserOpen }) => {
       })
       .then(() => successCreateAccountModal())
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setCreateAccountError("Error");
       });
   };

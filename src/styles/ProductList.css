@@ -51,7 +51,7 @@
     align-items: center;
     margin-top: 20px;
 }
-.link{
+.productList{
     width: 100%;
     text-decoration: none;
 }
@@ -132,7 +132,7 @@
     .cards__Container{
         /* background-color: rgb(244, 169, 246); */
     }
-    .link{
+    .productList{
         width: 46%;
         margin: 0 1%;
     }

@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import useCounter from "../hooks/useCounter";
 import { deletCartThunk } from "../redux/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBucket, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -8,9 +7,8 @@ import "../styles/MenuCar.css";
 
 const MenuCar = ({ isCarOpen, setisCarOpen }) => {
   const productCarts = useSelector((state) => state.productsCart);
-  const { counter } = useCounter();
   const dispatch = useDispatch();
-  console.log(productCarts);
+  // console.log(productCarts);
   return (
     <div className={`CarModal ${isCarOpen ? "open" : ""}`}>
       <FontAwesomeIcon

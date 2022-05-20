@@ -18,9 +18,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const ProductInfo = ({ Products }) => {
   const { id } = useParams();
   const [idProduct, setIdProduct] = useState({});
-  const [errLoginBefore, setErrLoginBefore] = useState("");
+  const [msgAddToCart, setMsgAddToCart] = useState("");
   const { counter, decrement, increment } = useCounter();
   const dispatch = useDispatch();
+
   useEffect(() => {
     axios
       .get(`https://ecommerce-api-react.herokuapp.com/api/v1/products/${id}/`)
@@ -36,16 +37,26 @@ const ProductInfo = ({ Products }) => {
       id: parseInt(id),
       quantity: counter,
     };
-    console.log(product);
+    // console.log(product);
     if (localStorage.getItem("token")) {
-      dispatch(addProductToCartThunk(product));
-      console.log("dispatch add to cart fn");
+      dispatch(addProductToCartThunk(product))
+        .then(() => {
+          setMsgAddToCart("Product added to cart");
+          setTimeout(() => {
+            setMsgAddToCart("");
+          }, 5000);
+        })
+        .catch(() => {
+          setMsgAddToCart("Error to add to cart");
+          setTimeout(() => {
+            setMsgAddToCart("");
+          }, 5000);
+        });
     } else {
-      setErrLoginBefore("Please login to add to cart");
+      setMsgAddToCart("Please login to add to cart");
       setTimeout(() => {
-        setErrLoginBefore("");
+        setMsgAddToCart("");
       }, 4000);
-      console.log("login");
     }
   };
   return (
@@ -109,7 +120,7 @@ const ProductInfo = ({ Products }) => {
                     height: "22px",
                   }}
                 >
-                  {errLoginBefore}
+                  {msgAddToCart}
                 </p>
                 <div className="carBtn" onClick={addProductToCart}>
                   Add to car <FontAwesomeIcon icon={faCartShopping} />
@@ -142,13 +153,6 @@ const ProductInfo = ({ Products }) => {
                       <p>
                         Prirce <span> {`$${product?.price}`} </span>{" "}
                       </p>
-                      {localStorage.getItem("token") ? (
-                        <button className="shoppingCar">
-                          <FontAwesomeIcon icon={faCartShopping} />
-                        </button>
-                      ) : (
-                        ""
-                      )}
                     </div>
                   </div>
                 </Link>
