@@ -8,7 +8,8 @@
 
 ## Description
 
-Filtering of 4 categories and by product name
+Filtering of 4 categories and by product name.
+
 ![filter by category](./src/images/imgReadme/filterByCategory.jpeg)
 ![filter by name](./src/images/imgReadme/filterByName.jpeg)
 
