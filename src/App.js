@@ -39,7 +39,3 @@ function App() {
   );
 }
 export default App;
-
-{
-  /* <HashRouter ></HashRouter> */
-}
